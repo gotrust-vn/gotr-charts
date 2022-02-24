@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  common:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-02-24T16:26:52.23374441Z"
+    description: A Helm chart for Kubernetes
+    digest: 0e4b929873cd0d1590930ae02b1eda915f74bb5de8125dea0918765d860e0e0c
+    name: common
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/common-0.1.0/common-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-02-24T16:26:52.23375251Z"
