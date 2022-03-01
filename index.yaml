@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  api-gateway:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-01T14:18:23.411271402Z"
+    description: A Helm chart for Kubernetes
+    digest: 3399c74c52cb8d3d81c6cc8daddf17e4f141629e69dbde9861f81e4191571e96
+    name: api-gateway
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/api-gateway-0.1.1/api-gateway-0.1.1.tgz
+    version: 0.1.1
   common:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -11,4 +22,4 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/common-0.1.0/common-0.1.0.tgz
     version: 0.1.0
-generated: "2022-02-24T16:26:52.23375251Z"
+generated: "2022-03-01T14:18:23.411278902Z"
