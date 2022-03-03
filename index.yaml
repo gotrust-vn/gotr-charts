@@ -46,6 +46,16 @@ entries:
   dev-env:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-03-03T12:04:05.636230659Z"
+    description: A Helm chart for Kubernetes
+    digest: 1e5d3a652615b775939f60b23eb7f8d97ba08f05fbee2b9884d432ea2bcf6b66
+    name: dev-env
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/dev-env-0.1.1/dev-env-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-03-03T11:38:24.936406885Z"
     description: A Helm chart for Kubernetes
     digest: bcec2c50211840ea94cfd57e4cd98b6c4cc18dbb263459a42cf7cba9ba7c5065
@@ -54,4 +64,15 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/dev-env-0.1.0/dev-env-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-03T11:38:24.936414485Z"
+  trung-gotrust:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-03T12:04:05.82333419Z"
+    description: A Helm chart for Kubernetes
+    digest: 1459d38b0a041f8e30f4a40a6db0e87458cbc03cace7dff07a89153c3db8c79a
+    name: trung-gotrust
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/trung-gotrust-0.1.0/trung-gotrust-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-03-03T12:04:05.82334619Z"
