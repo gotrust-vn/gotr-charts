@@ -43,4 +43,15 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/common-0.1.0/common-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-01T14:51:30.20688623Z"
+  dev-env:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-03T11:38:24.936406885Z"
+    description: A Helm chart for Kubernetes
+    digest: bcec2c50211840ea94cfd57e4cd98b6c4cc18dbb263459a42cf7cba9ba7c5065
+    name: dev-env
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/dev-env-0.1.0/dev-env-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-03-03T11:38:24.936414485Z"
