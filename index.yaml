@@ -195,15 +195,3 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/dev-env-0.1.0/dev-env-0.1.0.tgz
     version: 0.1.0
-  trung-gotrust:
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2022-03-03T12:04:05.82333419Z"
-    description: A Helm chart for Kubernetes
-    digest: 1459d38b0a041f8e30f4a40a6db0e87458cbc03cace7dff07a89153c3db8c79a
-    name: trung-gotrust
-    type: application
-    urls:
-    - https://github.com/gotrust-vn/helm-charts/releases/download/trung-gotrust-0.1.0/trung-gotrust-0.1.0.tgz
-    version: 0.1.0
-generated: "2022-03-03T17:11:08.63518727Z"
