@@ -1,0 +1,52 @@
+categories:
+    - Customer API
+
+questions:
+
+    - variable: container_name.default
+      default: true
+      description: "Use default image settings."
+      label: Use default Container Name
+      type: string
+      group: "Container Name"
+
+    - variable: image.repository
+      default: true
+      description: "Use default image settings."
+      label: Use default images
+      type: boolean
+      show_subquestion_if: false
+      group: "Image Registry"
+      subquestions:
+              - variable: image.repository
+                default: "301609905/customerserver"
+                description: "Customer Server."
+                label: Image registry
+                type: string
+              - variable: image.tag
+                default: "latest"
+                description: "Tag used for pulling images from registry."
+                label: Image tag
+                type: string
+              - variable: imagePullSecrets
+                default: ""
+                description: "Pull Secrets used for pulling images from registry."
+                label: Pull Secrets
+                type: string
+
+    - variable: service.type
+      default: ClusterIP
+      description: "Use default service settings."
+      label: Use default Service settings
+      type: string
+      group: "Service Type"
+
+    - variable: service.port
+      default: 80
+      description: "Use default service settings."
+      label: Use default Service settings
+      type: string
+      group: "Service Port"
+
+            
+
