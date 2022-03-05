@@ -54,6 +54,17 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/common-0.1.0/common-0.1.0.tgz
     version: 0.1.0
+  customer-api:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-05T15:29:30.760956538Z"
+    description: A Helm chart for Kubernetes
+    digest: 35eb821f8a0c5894fe9c81209dfa1dc129803665981dd9907b3fb0bd9d35dd61
+    name: customer-api
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/customer-api-0.1.0/customer-api-0.1.0.tgz
+    version: 0.1.0
   dev-env:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -195,3 +206,64 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/dev-env-0.1.0/dev-env-0.1.0.tgz
     version: 0.1.0
+  identity-api:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-05T15:29:30.940931783Z"
+    deprecated: true
+    description: A Helm chart for Kubernetes
+    digest: d291b6ce04d74ed2cc659cecbe17064ee0fc4a5675200364574999f0c6abd35e
+    name: identity-api
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/identity-api-0.1.0/identity-api-0.1.0.tgz
+    version: 0.1.0
+  master-category-api:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-05T15:29:31.116564176Z"
+    deprecated: true
+    description: A Helm chart for Kubernetes
+    digest: 314d53aced50fa147974443f9b6f5829228a83c06f3adaf7622e21daab9d7a41
+    name: master-category-api
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/master-category-api-0.1.0/master-category-api-0.1.0.tgz
+    version: 0.1.0
+  medical-api:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-05T15:29:31.272748837Z"
+    deprecated: true
+    description: A Helm chart for Kubernetes
+    digest: bc893f1473c61c7908027349fa13b34591dd84b61b95bb9e73168d1a8e0d9013
+    name: medical-api
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/medical-api-0.1.0/medical-api-0.1.0.tgz
+    version: 0.1.0
+  message-api:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-05T15:29:31.432075335Z"
+    deprecated: true
+    description: A Helm chart for Kubernetes
+    digest: 25f626e4efebbf755dfa8e69c06fb174ca27789670113c82875e2a89725f41f1
+    name: message-api
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/message-api-0.1.0/message-api-0.1.0.tgz
+    version: 0.1.0
+  uploadfile-api:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-05T15:29:31.580304301Z"
+    deprecated: true
+    description: A Helm chart for Kubernetes
+    digest: fb9466dae8168c6ccc479b3c8c95c4556b231e2e4cc1a9d4b7549427bcf5303f
+    name: uploadfile-api
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/uploadfile-api-0.1.0/uploadfile-api-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-03-05T15:29:31.580430403Z"
