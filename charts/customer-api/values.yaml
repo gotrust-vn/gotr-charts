@@ -10,7 +10,7 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 container_name: 
-  default: {{ .Chart.Name }}
+  default: customer-api
 
 imagePullSecrets: []
 nameOverride: ""
