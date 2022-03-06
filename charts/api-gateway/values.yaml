@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: 301609905/aicareapigateway
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -41,20 +41,35 @@ service:
   port: 80
 
 ingress:
-  enabled: false
+  enabled: true
   className: ""
-  annotations: {}
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/server-alias: aicare.x24hr.com
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: chart-example.local
+    - host: aicare.x24hr.com
       paths:
+        # for /swagger port 80
+        - path: /swagger
+          pathType: Prefix
+          name: api-gateway
+          portNumber: 80
+        # for /pgadmin4 port 80
+        - path: /pgadmin4
+          pathType: Prefix
+          name: dev-postgre
+          portNumber: 80
+        # for mongodb-nodeport port 27017
         - path: /
-          pathType: ImplementationSpecific
+          pathType: Prefix
+          name: aicarecrm
+          portNumber: 80
   tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+    - secretName: tls-aicare
+      hosts:
+        - aicare.x24hr.com
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -80,3 +95,10 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ASPNETCORE_URLS: http://+:80
+DOTNET_RUNNING_IN_CONTAINER: "true"
+DOTNET_VERSION: 6.0.2
+ASPNET_VERSION: 6.0.2
+Logging__Console__FormatterName: Json
