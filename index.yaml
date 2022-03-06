@@ -240,6 +240,25 @@ entries:
     - https://github.com/gotrust-vn/helm-charts/releases/download/identity-api-0.1.0/identity-api-0.1.0.tgz
     version: 0.1.0
   master-category-api:
+  - annotations:
+      category: Application
+    apiVersion: v2
+    appVersion: 0.0.1
+    created: "2022-03-06T15:42:44.175524487Z"
+    description: master category service of Gotrust
+    digest: d96a727554b642b0d7f8202edf5dfdb9e0e38565ee92816e6a803a57782a6335
+    keywords:
+    - gotrust
+    - application
+    - category
+    maintainers:
+    - email: maintainers@gotrust.vn
+      name: GoTrust
+    name: master-category-api
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/master-category-api-0.1.1/master-category-api-0.1.1.tgz
+    version: 0.1.1
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2022-03-05T15:29:31.116564176Z"
@@ -299,4 +318,4 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/uploadfile-api-0.1.0/uploadfile-api-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-06T14:43:47.98922189Z"
+generated: "2022-03-06T15:42:44.175799983Z"
