@@ -5,7 +5,7 @@ metadata:
   labels:
     {{- include "customer-api.labels" . | nindent 4 }}
 spec:
-  type: Cluster IP
+  type: ClusterIP
   ports:
     - port: 80
       targetPort: http
