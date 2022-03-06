@@ -5,7 +5,7 @@ questions:
 
     - variable: container_name.default
       default: true
-      description: "Use default image settings."
+      description: "Use default Container settings."
       label: Use default Container Name
       type: string
       group: "Container"
@@ -51,7 +51,7 @@ questions:
       default: true
       description: "Use default image settings."
       label: Use default images
-      type: boolean
+      type: string
       show_subquestion_if: false
       group: "Image Repository"
       subquestions:
