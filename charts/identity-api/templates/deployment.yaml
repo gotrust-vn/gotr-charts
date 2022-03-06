@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: "identity-api"
   labels:
-    "identity-api"
+    {{- include "identity-api.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
