@@ -24,7 +24,7 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "medical-api.serviceAccountName" . }}
+      serviceAccountName: "medical-api"
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -50,6 +50,7 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
+
             - name: https
               containerPort: 443
               protocol: TCP
