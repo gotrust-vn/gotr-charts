@@ -14,7 +14,7 @@ questions:
               - variable: container_name.default
                 description: "Use default image settings."
                 label: Use default Container Name
-                type: boolean
+                type: string
 
               - variable: image.repository
                 default: "301609905/customerserver"
@@ -43,19 +43,19 @@ questions:
               - variable: PATH
                 default: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
                 description: "Use default Environments settings."
-                label: Environments
+                label: PATH
                 type: string
 
               - variable: ASPNETCORE_URLS
                 default: "http://+:80"
                 description: "Use default Environments settings."
-                label: Environments
+                label: ASPNETCORE_URLS
                 type: string
               
-              - variable: ASPNETCORE_URLS
+              - variable: DOTNET_RUNNING_IN_CONTAINER
                 default: "true"
                 description: "Use default Environments settings."
-                label: Environments
+                label: DOTNET_RUNNING_IN_CONTAINER
                 type: string
               
               - variable: DOTNET_VERSION
