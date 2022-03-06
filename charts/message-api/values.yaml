@@ -17,7 +17,7 @@ DOTNET_VERSION: 5.0.13
 ASPNET_VERSION: 5.0.13
 
 
-imagePullSecrets: 
+imagePullSecrets:
   - name: "docker-hub-linhnh"
 nameOverride: ""
 fullnameOverride: ""

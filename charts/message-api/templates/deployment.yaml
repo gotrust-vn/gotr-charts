@@ -20,7 +20,10 @@ spec:
       labels:
         {{- include "message-api.selectorLabels" . | nindent 8 }}
     spec:
-      
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       serviceAccountName: "message-api"
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
@@ -30,7 +33,6 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          imagePullSecrets: {{ .Values.imagePullSecrets }}
           env:
             - name: PATH
               value: {{ .Values.PATH }}
