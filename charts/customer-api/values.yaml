@@ -42,12 +42,12 @@ service:
   type: ClusterIP
   port: 80
 
-PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin 
-ASPNETCORE_URLS: http://+:80
-DOTNET_RUNNING_IN_CONTAINER: true
-DOTNET_VERSION: 6.0.2
-ASPNET_VERSION: 6.0.2
-Logging__Console__FormatterName: Json
+PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+ASPNETCORE_URLS: "http://+:80"
+DOTNET_RUNNING_IN_CONTAINER: "true"
+DOTNET_VERSION: "6.0.2"
+ASPNET_VERSION: "6.0.2"
+Logging__Console__FormatterName: "Json"
 
 ingress:
   enabled: false
