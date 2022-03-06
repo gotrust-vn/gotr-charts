@@ -52,7 +52,7 @@ questions:
       description: "Use default image settings."
       label: Use default images
       type: boolean
-      show_subquestion_if: false
+      show_subquestion_if: 301609905/customerserver
       group: "Image Repository"
       subquestions:
               - variable: image.repository
