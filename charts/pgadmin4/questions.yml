@@ -98,7 +98,7 @@ questions:
   type: string
   group: "Container PG Admin"
 
-- variable: "traefik.frontend.rule"
+- variable: "traefik_frontend_rule"
   default: PathPrefix:/pgadmin4
   description: "Use default Container PG Admin settings."
   label: traefik.frontend.rule

@@ -60,8 +60,8 @@ spec:
               value: {{ .Values.PYTHONPATH }}
             - name: SCRIPT_NAME
               value: {{ .Values.SCRIPT_NAME }}
-            - name: traefik.frontend.rule
-              value: {{ .Values."traefik.frontend.rule" }}
+            - name: traefik_frontend_rule
+              value: {{ .Values."traefik_frontend_rule" }}
           ports:
             - containerPort: 5432
               name: psql

@@ -41,7 +41,7 @@ PGADMIN_DEFAULT_PASSWORD: GT@check1n
 PGADMIN_LISTEN_PORT: "80"
 PYTHONPATH: /pgadmin4
 SCRIPT_NAME: /pgadmin4
-traefik.frontend.rule: PathPrefix:/pgadmin4
+traefik_frontend_rule: PathPrefix:/pgadmin4
 
 # PSQL
 PATH_PSQL: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/postgresql/14/bin
