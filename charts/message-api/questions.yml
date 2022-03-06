@@ -64,9 +64,9 @@ questions:
   group: "Image Repository"
 
 - variable: imagePullSecrets
-  default: "docker-hub-linhnh"
+  default: docker-hub-linhnh
   description: "Use default Image Repository settings."
   label: Image Pull Secrets
-  type: string
+  type: array
   group: "Image Repository"
 
