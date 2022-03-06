@@ -2,83 +2,85 @@ categories:
     - Customer API
 
 questions:
-
+# Container
     - variable: container_name.default
       default: true
       description: "Use default Container settings."
       label: Use default Container Name
       type: string
       group: "Container"
-      subquestions:
-              - variable: PATH
-                default: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-                description: "Use default Environments settings."
-                label: PATH
-                type: string
-              
-              - variable: ASPNETCORE_URLS
-                default: http://+:80
-                description: "Use default Environments settings."
-                label: ASPNETCORE_URLS
-                type: string
-              
-              - variable: DOTNET_RUNNING_IN_CONTAINER
-                default: true
-                description: "Use default Environments settings."
-                label: DOTNET_RUNNING_IN_CONTAINER
-                type: string
-              
-              - variable: DOTNET_VERSION
-                default: 6.0.2
-                description: "Use default Environments settings."
-                label: DOTNET_VERSION
-                type: string
-              
-              - variable: ASPNET_VERSION
-                default: 6.0.2
-                description: "Use default Environments settings."
-                label: ASPNET_VERSION
-                type: string
-              
-              - variable: Logging__Console__FormatterName
-                default: Json
-                description: "Use default Environments settings."
-                label: Logging__Console__FormatterName
-                type: string
-                
-
-    - variable: image.repository
+# Environments
+    - variable: PATH
+      default: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      description: "Use default Environments settings."
+      label: PATH
+      type: string
+      group: "Environments"
+    
+    - variable: ASPNETCORE_URLS
+      default: http://+:80
+      description: "Use default Environments settings."
+      label: ASPNETCORE_URLS
+      type: string
+      group: "Environments"
+    
+    - variable: DOTNET_RUNNING_IN_CONTAINER
       default: true
-      description: "Use default image settings."
-      label: Use default images
-      type: boolean
-      show_subquestion_if: 301609905/customerserver
+      description: "Use default Environments settings."
+      label: DOTNET_RUNNING_IN_CONTAINER
+      type: string
+      group: "Environments"
+    
+    - variable: DOTNET_VERSION
+      default: 6.0.2
+      description: "Use default Environments settings."
+      label: DOTNET_VERSION
+      type: string
+      group: "Environments"
+    
+    - variable: ASPNET_VERSION
+      default: 6.0.2
+      description: "Use default Environments settings."
+      label: ASPNET_VERSION
+      type: string
+      group: "Environments"
+    
+    - variable: Logging__Console__FormatterName
+      default: Json
+      description: "Use default Environments settings."
+      label: Logging__Console__FormatterName
+      type: string
+      group: "Environments"
+                
+# Repository
+    
+    - variable: image.repository
+      default: "301609905/customerserver"
+      description: "Customer Server."
+      label: Image Repository
+      type: string
       group: "Image Repository"
-      subquestions:
-              - variable: image.repository
-                default: "301609905/customerserver"
-                description: "Customer Server."
-                label: Image Repository
-                type: string
 
-              - variable: image.pullPolicy
-                default: "IfNotPresent"
-                description: "Customer Server."
-                label: Pull Policy
-                type: string
+    - variable: image.pullPolicy
+      default: "IfNotPresent"
+      description: "Customer Server."
+      label: Pull Policy
+      type: string
+      group: "Image Repository"
 
-              - variable: image.tag
-                default: "latest"
-                description: "Tag used for pulling images from registry."
-                label: Image tag
-                type: string
+    - variable: image.tag
+      default: "latest"
+      description: "Tag used for pulling images from registry."
+      label: Image tag
+      type: string
+      group: "Image Repository"
 
-              - variable: imagePullSecrets
-                default: ""
-                description: "Pull Secrets used for pulling images from registry."
-                label: Pull Secrets
-                type: string
-
+    - variable: imagePullSecrets
+      default: ""
+      description: "Pull Secrets used for pulling images from registry."
+      label: Pull Secrets
+      type: string
+      group: "Image Repository"
 
     
 
