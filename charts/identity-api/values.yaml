@@ -8,7 +8,7 @@ image:
   repository: 301609905/identityserver
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "latest"
 
 PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ASPNETCORE_URLS: http://+:80
