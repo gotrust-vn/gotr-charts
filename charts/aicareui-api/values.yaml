@@ -56,7 +56,7 @@ ingress:
           name: aicare-ui
           portNumber: 80
 
-  tls: []
+  tls:
     - secretName: tls-medical-ai-ui
       hosts:
         - medical.aicare.x24hr.com
