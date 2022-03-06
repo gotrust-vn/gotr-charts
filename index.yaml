@@ -54,6 +54,27 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/common-0.1.0/common-0.1.0.tgz
     version: 0.1.0
+  crm-aicare:
+  - annotations:
+      category: Application
+    apiVersion: v2
+    appVersion: 0.0.1
+    created: "2022-03-06T02:33:41.275026787Z"
+    description: CRM AI Care, a service of GoTrust
+    digest: e140ad5b6fb6c15bf4e4de6cb3b9d311fcb3ea8939324575478a864565ea3ab7
+    keywords:
+    - gotrust
+    - application
+    - aicare
+    - crm
+    maintainers:
+    - email: maintainers@gotrust.vn
+      name: GoTrust
+    name: crm-aicare
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/crm-aicare-0.1.0/crm-aicare-0.1.0.tgz
+    version: 0.1.0
   customer-api:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -266,4 +287,4 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/uploadfile-api-0.1.0/uploadfile-api-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-05T15:29:31.580430403Z"
+generated: "2022-03-06T02:33:41.275093288Z"
