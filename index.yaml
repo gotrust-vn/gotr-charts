@@ -275,6 +275,18 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/message-api-0.1.0/message-api-0.1.0.tgz
     version: 0.1.0
+  pgadmin4:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-06T14:43:47.831284509Z"
+    deprecated: true
+    description: A Helm chart for Kubernetes
+    digest: 3d7406ac63a8b8b10dd6c3b314d5d92d89fa2db896b4cd43e44f1b20e1f64450
+    name: pgadmin4
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/pgadmin4-0.1.0/pgadmin4-0.1.0.tgz
+    version: 0.1.0
   uploadfile-api:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -287,4 +299,4 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/uploadfile-api-0.1.0/uploadfile-api-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-06T02:33:41.275093288Z"
+generated: "2022-03-06T14:43:47.98922189Z"
