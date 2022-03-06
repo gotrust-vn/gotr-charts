@@ -10,7 +10,7 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
-imagePullSecrets: []
+imagePullSecrets: docker-hub-thanhtung
 nameOverride: ""
 fullnameOverride: ""
 
@@ -80,3 +80,8 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+NGINX_VERSION: 1.21.3
+NJS_VERSION: 0.6.2
+PKG_RELEASE: 1~buster

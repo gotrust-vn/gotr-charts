@@ -28,6 +28,16 @@ spec:
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
+        - env:
+          - name: PATH
+            value: {{ .Values.PATH }}
+          - name: NGINX_VERSION
+            value: {{ .Values.NGINX_VERSION }}
+          - name: NJS_VERSION
+            value: {{ .Values.NJS_VERSION }}
+          - name: PKG_RELEASE
+            value: {{ .Values.PKG_RELEASE }}
+
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
