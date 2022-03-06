@@ -66,7 +66,7 @@ ingress:
           pathType: Prefix
           name: aicarecrm
           portNumber: 80
-  tls: []
+  tls:
     - secretName: tls-aicare
       hosts:
         - aicare.x24hr.com
