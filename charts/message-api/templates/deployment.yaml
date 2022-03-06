@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "message-api.fullname" . }}
+  name: "message-api"
   labels:
     {{- include "message-api.labels" . | nindent 4 }}
 spec:
@@ -31,20 +31,32 @@ spec:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: PATH
+              value: {{ .Values.PATH }}
+            - name: ASPNETCORE_URLS
+              value: {{ .Values.ASPNETCORE_URLS }}
+            - name: DOTNET_RUNNING_IN_CONTAINER
+              value: "{{ .Values.DOTNET_RUNNING_IN_CONTAINER }}"
+            - name: DOTNET_VERSION
+              value: {{ .Values.DOTNET_VERSION }}
+            - name: ASPNET_VERSION
+              value: {{ .Values.ASPNET_VERSION }}
+            
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 2022
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
+          #livenessProbe:
+          #  httpGet:
+          #    path: /
+          #    port: http
+          #readinessProbe:
+          #  httpGet:
+          #    path: /
+          #    port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

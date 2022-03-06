@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "uploadfile-api"
+  name: "customer-api"
   labels:
-    {{- include "uploadfile-api.labels" . | nindent 4 }}
+    {{- include "customer-api.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "uploadfile-api.selectorLabels" . | nindent 6 }}
+      {{- include "customer-api.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,13 +18,13 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "uploadfile-api.selectorLabels" . | nindent 8 }}
+        {{- include "customer-api.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "uploadfile-api.serviceAccountName" . }}
+      serviceAccountName: {{ include "customer-api.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -44,18 +44,20 @@ spec:
               value: {{ .Values.DOTNET_VERSION }}
             - name: ASPNET_VERSION
               value: {{ .Values.ASPNET_VERSION }}
+            - name: Logging__Console__FormatterName
+              value: {{ .Values.Logging__Console__FormatterName }}
           ports:
             - name: http
               containerPort: 80
               protocol: TCP
-          #livenessProbe:
-          #  httpGet:
-          #    path: /
-          #    port: http
-          #readinessProbe:
-          #  httpGet:
-          #    path: /
-          #    port: http
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

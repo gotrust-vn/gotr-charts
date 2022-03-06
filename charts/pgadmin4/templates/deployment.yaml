@@ -1,0 +1,150 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "pgadmin4"
+  labels:
+    {{- include "pgadmin4.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "pgadmin4.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "pgadmin4.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "pgadmin4.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: PATH_PGADMIN4
+              value: {{ .Values.PATH }}
+            - name: PGADMIN_CONFIG_CONSOLE_LOG_LEVEL
+              value: "{{ .Values.PGADMIN_CONFIG_CONSOLE_LOG_LEVEL }}"
+            - name: PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION
+              value: "{{ .Values.PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION }}"
+            - name: PGADMIN_CONFIG_PROXY_X_FOR_COUNT
+              value: "{{ .Values.PGADMIN_CONFIG_PROXY_X_FOR_COUNT }}"
+            - name: PGADMIN_CONFIG_PROXY_X_HOST_COUNT
+              value: "{{ .Values.PGADMIN_CONFIG_PROXY_X_HOST_COUNT }}"
+            - name: PGADMIN_CONFIG_PROXY_X_PORT_COUNT
+              value: "{{ .Values.PGADMIN_CONFIG_PROXY_X_PORT_COUNT }}"
+            - name: PGADMIN_CONFIG_PROXY_X_PREFIX_COUNT
+              value: "{{ .Values.PGADMIN_CONFIG_PROXY_X_PREFIX_COUNT }}"
+            - name: PGADMIN_CONFIG_PROXY_X_PROTO_COUNT
+              value: "{{ .Values.PGADMIN_CONFIG_PROXY_X_PROTO_COUNT }}"
+            - name: PGADMIN_DEFAULT_EMAIL
+              value: {{ .Values.PGADMIN_DEFAULT_EMAIL }}
+            - name: PGADMIN_DEFAULT_PASSWORD
+              value: {{ .Values.PGADMIN_DEFAULT_PASSWORD }}
+            - name: PGADMIN_LISTEN_PORT
+              value: "{{ .Values.PGADMIN_LISTEN_PORT }}"
+            - name: PYTHONPATH
+              value: {{ .Values.PYTHONPATH }}
+            - name: SCRIPT_NAME
+              value: {{ .Values.SCRIPT_NAME }}
+            - name: traefik.frontend.rule
+              value: {{ .Values."traefik.frontend.rule" }}
+          ports:
+            - containerPort: 5432
+              name: psql
+              protocol: TCP
+            - containerPort: 80
+              name: http
+              protocol: TCP
+            
+          #livenessProbe:
+          #  httpGet:
+          #    path: /
+          #    port: http
+          #readinessProbe:
+          #  httpGet:
+          #    path: /
+          #    port: http
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+        - name: "postgresql"
+            securityContext:
+              {{- toYaml .Values.securityContext | nindent 12 }}
+            image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+            imagePullPolicy: {{ .Values.image.pullPolicy }}
+            env:
+              - name: PATH_PSQL
+                value: {{ .Values.PATH_PSQL }}
+              
+              - name: POSTGRES_USER
+                value: {{ .Values.POSTGRES_USER }}
+              
+              - name: POSTGRES_PASSWORD
+                value: {{ .Values.POSTGRES_PASSWORD }}
+              
+              - name: GOSU_VERSION
+                value: "{{ .Values.GOSU_VERSION }}"
+              
+              - name: LANG
+                value: {{ .Values.LANG }}
+              
+              - name: PG_MAJOR
+                value: "{{ .Values.PG_MAJOR }}"
+              
+              - name: PG_VERSION
+                value: {{ .Values.PG_VERSION }}
+
+              - name: PGDATA
+                value: {{ .Values.PGDATA }}
+
+            ports:
+              - containerPort: 5432
+                name: db
+                protocol: TCP
+            #livenessProbe:
+            #  httpGet:
+            #    path: /
+            #    port: http
+            #readinessProbe:
+            #  httpGet:
+            #    path: /
+            #    port: http
+            resources:
+              {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

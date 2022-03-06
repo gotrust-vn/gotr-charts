@@ -1,18 +1,27 @@
-# Default values for message-api.
+# Default values for identity-api.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: nhlinh/gotrust_common_message
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "latest"
 
-imagePullSecrets: []
+PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ASPNETCORE_URLS: http://+:2022
+DOTNET_RUNNING_IN_CONTAINER: "true"
+DOTNET_VERSION: 5.0.13
+ASPNET_VERSION: 5.0.13
+
+
+imagePullSecrets: "docker-hub-linhnh"
 nameOverride: ""
 fullnameOverride: ""
+
+container_name: message-api
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -38,7 +47,7 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 80
+  port: 2022
 
 ingress:
   enabled: false
@@ -47,7 +56,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: chart-example.local
+    - host: aicare.x24hr.com
       paths:
         - path: /
           pathType: ImplementationSpecific

@@ -5,23 +5,23 @@
 replicaCount: 1
 
 image:
-  repository: nhlinh/gotrust_common_uploadfile
-  pullPolicy: IfNotPresent
+  repository: 301609905/customerserver
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
 PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ASPNETCORE_URLS: http://+:80
 DOTNET_RUNNING_IN_CONTAINER: "true"
-DOTNET_VERSION: 5.0.13
-ASPNET_VERSION: 5.0.13
+DOTNET_VERSION: 6.0.2
+ASPNET_VERSION: 6.0.2
+Logging__Console__FormatterName: Json
 
-
-imagePullSecrets: "docker-hub-linhnh"
+imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-container_name: identityserver
+container_name: customer-api
 
 serviceAccount:
   # Specifies whether a service account should be created
