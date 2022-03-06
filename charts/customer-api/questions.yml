@@ -51,7 +51,7 @@ questions:
       default: true
       description: "Use default image settings."
       label: Use default images
-      type: boolan
+      type: boolean
       show_subquestion_if: false
       group: "Image Repository"
       subquestions:
