@@ -49,6 +49,14 @@ spec:
             - name: http
               containerPort: 2022
               protocol: TCP
+
+            - name: tcp-7923
+              containerPort: 7923
+              protocol: TCP
+
+            - name: tcp-9899
+              containerPort: 9899
+              protocol: TCP
           #livenessProbe:
           #  httpGet:
           #    path: /

@@ -16,12 +16,12 @@ spec:
     - port: 7923
       targetPort: 7923
       protocol: TCP
-      name: 7923TCP
+      name: tcp-7923
 
     - port: 9899
       targetPort: 9899
       protocol: TCP
-      name: 9899TCP
+      name: tcp-9899
 
   selector:
     {{- include "message-api.selectorLabels" . | nindent 4 }}
