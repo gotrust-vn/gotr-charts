@@ -1,0 +1,72 @@
+questions:
+- variable: container_name
+  default: true
+  description: "Use default Container Name settings."
+  label: Use default Container Name
+  type: string
+  group: "Container"
+
+- variable: PATH
+  default: usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+  description: "Use default Environments settings."
+  label: PATH
+  type: string
+  group: "Environments"
+
+- variable: ASPNETCORE_URLS
+  default: http://+:2022
+  description: "Use default Environments settings."
+  label: ASPNETCORE_URLS
+  type: string
+  group: "Environments"
+
+- variable: DOTNET_RUNNING_IN_CONTAINER
+  default: "true"
+  description: "Use default Environments settings."
+  label: DOTNET_RUNNING_IN_CONTAINER
+  type: string
+  group: "Environments"
+
+- variable: DOTNET_VERSION
+  default: 5.0.13
+  description: "Use default Environments settings."
+  label: DOTNET_VERSION
+  type: string
+  group: "Environments"
+
+- variable: ASPNET_VERSION
+  default: 5.0.13
+  description: "Use default Environments settings."
+  label: ASPNET_VERSION
+  type: string
+  group: "Environments"
+
+
+- variable: image.repository
+  default: "nhlinh/gotrust_common_message"
+  description: "Use default Image Repository settings."
+  label: Image Repository
+  type: string
+  group: "Image Repository"
+
+- variable: image.pullPolicy
+  default: IfNotPresent
+  description: "Use default Image Repository settings."
+  label: Pull Policy
+  type: string
+  group: "Image Repository"
+
+- variable: image.tag
+  default: "latest"
+  description: "Use default Image Repository settings."
+  label: Image Repository
+  type: string
+  group: "Image Repository"
+
+- variable: imagePullSecrets
+  default: "docker-hub-linhnh"
+  description: "Use default Image Repository settings."
+  label: Image Pull Secrets
+  type: string
+  group: "Image Repository"
+
