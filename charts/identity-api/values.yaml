@@ -21,6 +21,8 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+container_name: identityserver
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true

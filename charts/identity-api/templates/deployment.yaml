@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "identity-api.fullname" . }}
+  name: "identity-api"
   labels:
-    {{- include "identity-api.labels" . | nindent 4 }}
+    "identity-api"
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
