@@ -51,20 +51,28 @@ questions:
       default: true
       description: "Use default image settings."
       label: Use default images
-      type: string
+      type: boolan
       show_subquestion_if: false
       group: "Image Repository"
       subquestions:
               - variable: image.repository
                 default: "301609905/customerserver"
                 description: "Customer Server."
-                label: Image registry
+                label: Image Repository
                 type: string
+
+              - variable: image.pullPolicy
+                default: "IfNotPresent"
+                description: "Customer Server."
+                label: Pull Policy
+                type: string
+
               - variable: image.tag
                 default: "latest"
                 description: "Tag used for pulling images from registry."
                 label: Image tag
                 type: string
+
               - variable: imagePullSecrets
                 default: ""
                 description: "Pull Secrets used for pulling images from registry."
