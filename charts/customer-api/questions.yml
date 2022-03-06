@@ -7,77 +7,69 @@ questions:
       default: true
       description: "Use default image settings."
       label: Use default Container Name
-      type: boolean
-      group: "General Settings"
-      show_subquestion_if: false
+      type: string
+      group: "Container"
       subquestions:
-              - variable: container_name.default
-                description: "Use default image settings."
-                label: Use default Container Name
-                type: string
-
-              - variable: image.repository
-                default: "301609905/customerserver"
-                description: "Customer Server."
-                label: Image registry
-                type: string
-
-              - variable: image.tag
-                default: "latest"
-                description: "Tag used for pulling images from registry."
-                label: Image tag
-                type: string
-
-              - variable: imagePullSecrets
-                default: ""
-                description: "Pull Secrets used for pulling images from registry."
-                label: Pull Secrets
-                type: string
-
-              - variable: imagePullPolicy
-                default: ""
-                description: "Image pull policy."
-                label: Image pull policy
-                type: string
-              
               - variable: PATH
-                default: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+                default: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
                 description: "Use default Environments settings."
                 label: PATH
                 type: string
-
+              
               - variable: ASPNETCORE_URLS
-                default: "http://+:80"
+                default: http://+:80
                 description: "Use default Environments settings."
                 label: ASPNETCORE_URLS
                 type: string
               
               - variable: DOTNET_RUNNING_IN_CONTAINER
-                default: "true"
+                default: true
                 description: "Use default Environments settings."
                 label: DOTNET_RUNNING_IN_CONTAINER
                 type: string
               
               - variable: DOTNET_VERSION
-                default: "6.0.2"
+                default: 6.0.2
                 description: "Use default Environments settings."
-                label: Environments
+                label: DOTNET_VERSION
                 type: string
               
               - variable: ASPNET_VERSION
-                default: "6.0.2"
+                default: 6.0.2
                 description: "Use default Environments settings."
-                label: Environments
+                label: ASPNET_VERSION
                 type: string
               
               - variable: Logging__Console__FormatterName
-                default: "Json"
+                default: Json
                 description: "Use default Environments settings."
-                label: Environments
+                label: Logging__Console__FormatterName
                 type: string
-    
+                
 
-      
+    - variable: image.repository
+      default: true
+      description: "Use default image settings."
+      label: Use default images
+      type: boolean
+      show_subquestion_if: false
+      group: "Image Repository"
+      subquestions:
+              - variable: image.repository
+                default: "301609905/customerserver"
+                description: "Customer Server."
+                label: Image registry
+                type: string
+              - variable: image.tag
+                default: "latest"
+                description: "Tag used for pulling images from registry."
+                label: Image tag
+                type: string
+              - variable: imagePullSecrets
+                default: ""
+                description: "Pull Secrets used for pulling images from registry."
+                label: Pull Secrets
+                type: string
 
 
     
