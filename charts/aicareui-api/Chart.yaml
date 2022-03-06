@@ -1,17 +1,8 @@
 annotations:
   category: Application
 apiVersion: v2
-name: api-gateway
-description: Gateway API of GoTrust
-
-keywords:
-  - gotrust
-  - application
-  - gateway
-  - api
-maintainers:
-  - email: maintainers@gotrust.vn
-    name: GoTrust
+name: aicareui-api
+description: AI Care UI, a product is powered by GoTrust
 
 # A chart can be either an 'application' or a 'library' chart.
 #
@@ -33,3 +24,11 @@ version: 0.1.0
 # follow Semantic Versioning. They should reflect the version the application is using.
 # It is recommended to use it with quotes.
 appVersion: "0.0.1"
+
+keywords:
+  - gotrust
+  - application
+  - aicareui
+maintainers:
+  - email: maintainers@gotrust.vn
+    name: GoTrust
