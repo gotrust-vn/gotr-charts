@@ -63,10 +63,3 @@ questions:
   type: string
   group: "Image Repository"
 
-- variable: imagePullSecrets
-  default: ""
-  description: "Use default Image Repository settings."
-  label: Image Pull Secrets
-  type: string
-  group: "Image Repository"
-
