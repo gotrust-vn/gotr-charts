@@ -12,7 +12,7 @@ image:
 container_name: 
   default: customer-api
 
-imagePullSecrets: []
+imagePullSecrets: ""
 nameOverride: ""
 fullnameOverride: ""
 

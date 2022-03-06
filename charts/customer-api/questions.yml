@@ -7,46 +7,80 @@ questions:
       default: true
       description: "Use default image settings."
       label: Use default Container Name
-      type: string
-      group: "Container Name"
-
-    - variable: image.repository
-      default: true
-      description: "Use default image settings."
-      label: Use default images
       type: boolean
+      group: "General Settings"
       show_subquestion_if: false
-      group: "Image Registry"
       subquestions:
+              - variable: container_name.default
+                description: "Use default image settings."
+                label: Use default Container Name
+                type: boolean
+
               - variable: image.repository
                 default: "301609905/customerserver"
                 description: "Customer Server."
                 label: Image registry
                 type: string
+
               - variable: image.tag
                 default: "latest"
                 description: "Tag used for pulling images from registry."
                 label: Image tag
                 type: string
+
               - variable: imagePullSecrets
                 default: ""
                 description: "Pull Secrets used for pulling images from registry."
                 label: Pull Secrets
                 type: string
 
-    - variable: service.type
-      default: ClusterIP
-      description: "Use default service settings."
-      label: Use default Service settings
-      type: string
-      group: "Service Type"
+              - variable: imagePullPolicy
+                default: ""
+                description: "Image pull policy."
+                label: Image pull policy
+                type: string
+              
+              - variable: PATH
+                default: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+                description: "Use default Environments settings."
+                label: Environments
+                type: string
 
-    - variable: service.port
-      default: 80
-      description: "Use default service settings."
-      label: Use default Service settings
-      type: string
-      group: "Service Port"
+              - variable: ASPNETCORE_URLS
+                default: "http://+:80"
+                description: "Use default Environments settings."
+                label: Environments
+                type: string
+              
+              - variable: ASPNETCORE_URLS
+                default: "true"
+                description: "Use default Environments settings."
+                label: Environments
+                type: string
+              
+              - variable: DOTNET_VERSION
+                default: "6.0.2"
+                description: "Use default Environments settings."
+                label: Environments
+                type: string
+              
+              - variable: ASPNET_VERSION
+                default: "6.0.2"
+                description: "Use default Environments settings."
+                label: Environments
+                type: string
+              
+              - variable: Logging__Console__FormatterName
+                default: "Json"
+                description: "Use default Environments settings."
+                label: Environments
+                type: string
+    
+
+      
+
+
+    
 
             
 
