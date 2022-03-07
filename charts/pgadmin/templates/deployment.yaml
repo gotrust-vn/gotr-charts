@@ -24,7 +24,7 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "pgadmin.serviceAccountName" . }}
+      serviceAccountName: "pgadmin"
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -61,12 +61,13 @@ spec:
             - name: SCRIPT_NAME
               value: {{ .Values.SCRIPT_NAME }}
           ports:
-            - containerPort: 5432
-              name: psql
+            - name: psql
+              containerPort: 5432
               protocol: TCP
-            - containerPort: 80
-              name: http
+            - name: http
+              containerPort: 80
               protocol: TCP
+            
           {{- /*
  livenessProbe:
             httpGet:

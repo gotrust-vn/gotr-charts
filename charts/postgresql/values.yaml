@@ -50,7 +50,7 @@ PGDATA: /var/lib/postgresql/data
 
 service:
   type: ClusterIP
-  port: 80
+  port: 5432
 
 ingress:
   enabled: false
