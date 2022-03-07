@@ -313,6 +313,17 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/message-api-0.1.0/message-api-0.1.0.tgz
     version: 0.1.0
+  pgadmin:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-07T14:26:21.171472217Z"
+    description: A Helm chart for Kubernetes
+    digest: dd795e57de975f7be4b57bcc42e885215a6d12ec22b06f9b6ed60fe523c18bef
+    name: pgadmin
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/pgadmin-0.1.0/pgadmin-0.1.0.tgz
+    version: 0.1.0
   pgadmin4:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -324,6 +335,17 @@ entries:
     type: application
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/pgadmin4-0.1.0/pgadmin4-0.1.0.tgz
+    version: 0.1.0
+  postgresql:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-07T14:26:21.344277992Z"
+    description: A Helm chart for Kubernetes
+    digest: 24d3f3d29d1afa1c0eda678a2b0b53a700fcba4896f5699f92cdaef21dc9ea3e
+    name: postgresql
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/postgresql-0.1.0/postgresql-0.1.0.tgz
     version: 0.1.0
   uploadfile-api:
   - apiVersion: v2
@@ -337,4 +359,4 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/uploadfile-api-0.1.0/uploadfile-api-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-06T16:16:38.50234667Z"
+generated: "2022-03-07T14:26:21.531952464Z"
