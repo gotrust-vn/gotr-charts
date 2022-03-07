@@ -32,36 +32,36 @@ spec:
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-            imagePullPolicy: {{ .Values.image.pullPolicy }}
-            env:
-              - name: PATH
-                value: {{ .Values.PATH }}
-              
-              - name: POSTGRES_USER
-                value: {{ .Values.POSTGRES_USER }}
-              
-              - name: POSTGRES_PASSWORD
-                value: {{ .Values.POSTGRES_PASSWORD }}
-              
-              - name: GOSU_VERSION
-                value: "{{ .Values.GOSU_VERSION }}"
-              
-              - name: LANG
-                value: {{ .Values.LANG }}
-              
-              - name: PG_MAJOR
-                value: "{{ .Values.PG_MAJOR }}"
-              
-              - name: PG_VERSION
-                value: {{ .Values.PG_VERSION }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: PATH
+              value: {{ .Values.PATH }}
+            
+            - name: POSTGRES_USER
+              value: {{ .Values.POSTGRES_USER }}
+            
+            - name: POSTGRES_PASSWORD
+              value: {{ .Values.POSTGRES_PASSWORD }}
+            
+            - name: GOSU_VERSION
+              value: "{{ .Values.GOSU_VERSION }}"
+            
+            - name: LANG
+              value: {{ .Values.LANG }}
+            
+            - name: PG_MAJOR
+              value: "{{ .Values.PG_MAJOR }}"
+            
+            - name: PG_VERSION
+              value: {{ .Values.PG_VERSION }}
 
-              - name: PGDATA
-                value: {{ .Values.PGDATA }}
+            - name: PGDATA
+              value: {{ .Values.PGDATA }}
 
-            ports:
-              - containerPort: 5432
-                name: db
-                protocol: TCP
+          ports:
+            - containerPort: 5432
+              name: db
+              protocol: TCP
           {{- /*
  livenessProbe:
             httpGet:
