@@ -67,18 +67,6 @@ spec:
               value: {{ .Values.PYTHONPATH }}
             - name: SCRIPT_NAME
               value: {{ .Values.SCRIPT_NAME }}
-          
-            
-          {{- /*
- livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http 
-*/ -}}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
