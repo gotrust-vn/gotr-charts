@@ -33,6 +33,10 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: postgresql
+              containerPort: 5432
+              protocol: TCP
           env:
             - name: PATH
               value: {{ .Values.PATH }}
@@ -57,21 +61,8 @@ spec:
 
             - name: PGDATA
               value: {{ .Values.PGDATA }}
-
-          ports:
-            - containerPort: 5432
-              name: db
-              protocol: TCP
-          {{- /*
- livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http 
-*/ -}}
+          
+         
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
