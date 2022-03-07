@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "postgresql.fullname" . }}
+  name: "postgresql"
   labels:
     {{- include "postgresql.labels" . | nindent 4 }}
 spec:
