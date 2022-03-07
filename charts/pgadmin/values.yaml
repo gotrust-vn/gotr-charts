@@ -1,18 +1,16 @@
-# Default values for pgadmin4.
+# Default values for pgadmin.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository_pgadmin4: dpage/pgadmin4
-  repository_psql: postgres
+  repository: dpage/pgadmin4
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
-container_name_pgadmin4: pgadmin4
-container_name_postgresql: postgresql
+container_name: pgadmin4
 
 imagePullSecrets: []
 nameOverride: ""
@@ -28,7 +26,7 @@ serviceAccount:
   name: ""
 
 # PGADMIN4
-PATH_PGADMIN4: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 PGADMIN_CONFIG_CONSOLE_LOG_LEVEL: "10"
 PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION: "True"
 PGADMIN_CONFIG_PROXY_X_FOR_COUNT: "1"
@@ -41,18 +39,6 @@ PGADMIN_DEFAULT_PASSWORD: GT@check1n
 PGADMIN_LISTEN_PORT: "80"
 PYTHONPATH: /pgadmin4
 SCRIPT_NAME: /pgadmin4
-traefik_frontend_rule: PathPrefix:/pgadmin4
-
-# PSQL
-PATH_PSQL: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/postgresql/14/bin
-POSTGRES_USER: MasterUsr
-POSTGRES_PASSWORD: Pass@PostgreSQL
-GOSU_VERSION: "1.12"
-LANG: en_US.utf8
-PG_MAJOR: "14"
-PG_VERSION: 14.0-1.pgdg110+1
-PGDATA: /var/lib/postgresql/data
-
 
 podAnnotations: {}
 

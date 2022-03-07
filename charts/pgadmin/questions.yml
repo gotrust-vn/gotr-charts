@@ -1,16 +1,16 @@
 questions:
 # PG Admin Configuration
-- variable: container_name_pgadmin4
+- variable: container_name
   default: pgadmin4
   description: "Use default Container Name settings."
   label: Use default Container Name
   type: string
   group: "Container PG Admin"
 
-- variable: PATH_PGADMIN4
+- variable: PATH
   default: usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
   description: "Use default Container PG Admin settings."
-  label: PATH_PGADMIN4
+  label: PATH
   type: string
   group: "Container PG Admin"
 
@@ -98,14 +98,7 @@ questions:
   type: string
   group: "Container PG Admin"
 
-- variable: "traefik_frontend_rule"
-  default: PathPrefix:/pgadmin4
-  description: "Use default Container PG Admin settings."
-  label: traefik.frontend.rule
-  type: string
-  group: "Container PG Admin"
-
-- variable: image.repository_pgadmin4
+- variable: image.repository
   default: "dpage/pgadmin4"
   description: "Use default Container PG Admin settings."
   label: Image Repository
@@ -126,88 +119,4 @@ questions:
   type: string
   group: "Container PG Admin"
 
-# Postgresql Configuration
 
-- variable: container_name_postgresql
-  default: postgresql
-  description: "Use default Container Postgresql settings."
-  label: Use default Container Name
-  type: string
-  group: "Container Postgresql"
-
-- variable: PATH_PSQL
-  default: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/postgresql/14/bin
-  description: "Use default Container Postgresql settings."
-  label: PATH_PSQL
-  type: string
-  group: "Container Postgresql"
-
-- variable: POSTGRES_USER
-  default: MasterUsr
-  description: "Use default Container Postgresql settings."
-  label: POSTGRES_USER
-  type: string
-  group: "Container Postgresql"
-
-- variable: POSTGRES_PASSWORD
-  default: Pass@PostgreSQL
-  description: "Use default Container Postgresql settings."
-  label: POSTGRES_PASSWORD
-  type: string
-  group: "Container Postgresql"
-
-- variable: GOSU_VERSION
-  default: "1.12"
-  description: "Use default Container Postgresql settings."
-  label: GOSU_VERSION
-  type: string
-  group: "Container Postgresql"
-
-- variable: LANG
-  default: en_US.utf8
-  description: "Use default Container Postgresql settings."
-  label: LANG
-  type: string
-  group: "Container Postgresql"
-
-- variable: PG_MAJOR
-  default: "14"
-  description: "Use default Container Postgresql settings."
-  label: PG_MAJOR
-  type: string
-  group: "Container Postgresql"
-
-- variable: PG_VERSION
-  default: 14.0-1.pgdg110+1
-  description: "Use default Container Postgresql settings."
-  label: PG_VERSION
-  type: string
-  group: "Container Postgresql"
-
-- variable: PGDATA
-  default: /var/lib/postgresql/data
-  description: "Use default Container Postgresql settings."
-  label: PGDATA
-  type: string
-  group: "Container Postgresql"
-
-- variable: image.repository_psql
-  default: postgres
-  description: "Use default Container Postgresql settings."
-  label: Image Repository Psql
-  type: string
-  group: "Container Postgresql"
-
-- variable: image.tag
-  default: latest
-  description: "Use default Container Postgresql settings."
-  label: Tag
-  type: string
-  group: "Container Postgresql"
-
-- variable: image.pullPolicy
-  default: Always
-  description: "Use default Container Postgresql settings."
-  label: Pull Policy
-  type: string
-  group: "Container Postgresql"

@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "pgadmin4"
+  name: "pgadmin"
   labels:
-    {{- include "pgadmin4.labels" . | nindent 4 }}
+    {{- include "pgadmin.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "pgadmin4.selectorLabels" . | nindent 6 }}
+      {{- include "pgadmin.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,13 +18,13 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "pgadmin4.selectorLabels" . | nindent 8 }}
+        {{- include "pgadmin.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "pgadmin4.serviceAccountName" . }}
+      serviceAccountName: {{ include "pgadmin.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -34,7 +34,7 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-            - name: PATH_PGADMIN4
+            - name: PATH
               value: {{ .Values.PATH }}
             - name: PGADMIN_CONFIG_CONSOLE_LOG_LEVEL
               value: "{{ .Values.PGADMIN_CONFIG_CONSOLE_LOG_LEVEL }}"
@@ -60,8 +60,6 @@ spec:
               value: {{ .Values.PYTHONPATH }}
             - name: SCRIPT_NAME
               value: {{ .Values.SCRIPT_NAME }}
-            - name: traefik_frontend_rule
-              value: {{ .Values.traefik_frontend_rule }}
           ports:
             - containerPort: 5432
               name: psql
@@ -69,73 +67,18 @@ spec:
             - containerPort: 80
               name: http
               protocol: TCP
-            
-          #livenessProbe:
-          #  httpGet:
-          #    path: /
-          #    port: http
-          #readinessProbe:
-          #  httpGet:
-          #    path: /
-          #    port: http
+          {{- /*
+ livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http 
+*/ -}}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-      {{- with .Values.nodeSelector }}
-      nodeSelector:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.affinity }}
-      affinity:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.tolerations }}
-      tolerations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-        - name: "postgresql"
-            securityContext:
-              {{- toYaml .Values.securityContext | nindent 12 }}
-            image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-            imagePullPolicy: {{ .Values.image.pullPolicy }}
-            env:
-              - name: PATH_PSQL
-                value: {{ .Values.PATH_PSQL }}
-              
-              - name: POSTGRES_USER
-                value: {{ .Values.POSTGRES_USER }}
-              
-              - name: POSTGRES_PASSWORD
-                value: {{ .Values.POSTGRES_PASSWORD }}
-              
-              - name: GOSU_VERSION
-                value: "{{ .Values.GOSU_VERSION }}"
-              
-              - name: LANG
-                value: {{ .Values.LANG }}
-              
-              - name: PG_MAJOR
-                value: "{{ .Values.PG_MAJOR }}"
-              
-              - name: PG_VERSION
-                value: {{ .Values.PG_VERSION }}
-
-              - name: PGDATA
-                value: {{ .Values.PGDATA }}
-
-            ports:
-              - containerPort: 5432
-                name: db
-                protocol: TCP
-            #livenessProbe:
-            #  httpGet:
-            #    path: /
-            #    port: http
-            #readinessProbe:
-            #  httpGet:
-            #    path: /
-            #    port: http
-            resources:
-              {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
