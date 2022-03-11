@@ -50,7 +50,7 @@ questions:
   group: "Image Repository"
 
 - variable: image.pullPolicy
-  default: IfNotPresent
+  default: Always
   description: "Use default Image Repository settings."
   label: Pull Policy
   type: string
