@@ -1,6 +1,6 @@
 questions:
 - variable: container_name
-  default: identityserver
+  default: master-category-api
   description: "Use default Container Name settings."
   label: Use default Container Name
   type: string
@@ -28,29 +28,35 @@ questions:
   group: "Environments"
 
 - variable: DOTNET_VERSION
-  default: 5.0.13
+  default: 6.0.1
   description: "Use default Environments settings."
   label: DOTNET_VERSION
   type: string
   group: "Environments"
 
 - variable: ASPNET_VERSION
-  default: 5.0.13
+  default: 6.0.1
   description: "Use default Environments settings."
   label: ASPNET_VERSION
   type: string
   group: "Environments"
 
+- variable: Logging__Console__FormatterName
+  default: Json
+  description: "Use default Environments settings."
+  label: Logging__Console__FormatterName
+  type: string
+  group: "Environments"
 
 - variable: image.repository
-  default: "nhlinh/gotrust_common_uploadfile"
+  default: "301609905/mastercategoryserver"
   description: "Use default Image Repository settings."
   label: Image Repository
   type: string
   group: "Image Repository"
 
 - variable: image.pullPolicy
-  default: IfNotPresent
+  default: Always
   description: "Use default Image Repository settings."
   label: Pull Policy
   type: string
@@ -62,4 +68,3 @@ questions:
   label: Image Repository
   type: string
   group: "Image Repository"
-

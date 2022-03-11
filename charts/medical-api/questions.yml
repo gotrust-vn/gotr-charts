@@ -1,6 +1,6 @@
 questions:
 - variable: container_name
-  default: true
+  default: medical-api
   description: "Use default Container Name settings."
   label: Use default Container Name
   type: string

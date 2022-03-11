@@ -1,8 +1,7 @@
 apiVersion: v2
-name: message-api
-description: Api send mail, send otp, push notification
+name: master-category-api
+description: API quản lý danh mục
 #deprecated: true
-
 # A chart can be either an 'application' or a 'library' chart.
 #
 # Application charts are a collection of templates that can be packaged into versioned archives

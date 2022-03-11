@@ -1,6 +1,6 @@
 apiVersion: v2
 name: medical-api
-description: A Helm chart for Kubernetes
+description: API quản lý các dịch vụ y tế
 #deprecated: true
 
 # A chart can be either an 'application' or a 'library' chart.

@@ -1,6 +1,6 @@
 apiVersion: v2
 name: uploadfile-api
-description: A Helm chart for Kubernetes
+description: Api upload file lên server
 #deprecated: true
 
 # A chart can be either an 'application' or a 'library' chart.
