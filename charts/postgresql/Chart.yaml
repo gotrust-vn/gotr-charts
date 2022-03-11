@@ -1,6 +1,6 @@
 apiVersion: v2
 name: postgresql
-description: A Helm chart for Kubernetes
+description: Postgresql Database
 #deprecated: true
 
 # A chart can be either an 'application' or a 'library' chart.
