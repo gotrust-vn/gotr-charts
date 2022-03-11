@@ -11,6 +11,17 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/Trung-gotrust-1.0.0/Trung-gotrust-1.0.0.tgz
     version: 1.0.0
+  aicareui-api:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-11T10:14:10.855838624Z"
+    description: Api Ui của app ai care
+    digest: 0476b0aa44e1cb77b99d2d0c93a5819b35ba60ac19b78cc9ddb880ffe4b4e0ec
+    name: aicareui-api
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/aicareui-api-0.1.0/aicareui-api-0.1.0.tgz
+    version: 0.1.0
   api-gateway:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -227,6 +238,17 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/dev-env-0.1.0/dev-env-0.1.0.tgz
     version: 0.1.0
+  gateway-api:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-11T10:14:11.370040846Z"
+    description: API Gateway
+    digest: 167f0577c03ddec82affc82b05978cb123c0043b14882cd5b426058fd4617b24
+    name: gateway-api
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/gateway-api-0.1.0/gateway-api-0.1.0.tgz
+    version: 0.1.0
   identity-api:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -313,6 +335,17 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/message-api-0.1.0/message-api-0.1.0.tgz
     version: 0.1.0
+  payment-api:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-11T10:14:12.216595436Z"
+    description: Api thanh toán trên payment portal
+    digest: 7e7c78d9704de3384072a31c2f05173ca51d987b466a04a20685dd40ba97d5dc
+    name: payment-api
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/payment-api-0.1.0/payment-api-0.1.0.tgz
+    version: 0.1.0
   pgadmin:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -359,4 +392,4 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/uploadfile-api-0.1.0/uploadfile-api-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-07T14:26:21.531952464Z"
+generated: "2022-03-11T10:14:12.713818934Z"
