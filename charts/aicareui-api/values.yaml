@@ -17,7 +17,7 @@ DOTNET_VERSION: 5.0.14
 ASPNET_VERSION: 5.0.14
 
 imagePullSecrets:
-  - name: "docker-hub-linhnh"
+  - name: "docker-hub-thanhtung"
 nameOverride: ""
 fullnameOverride: ""
 container_name: aicareui-api

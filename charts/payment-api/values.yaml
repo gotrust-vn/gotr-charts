@@ -8,7 +8,7 @@ image:
   repository: thanhtung2604/paymentapi
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  tag: "prod"
 
 PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ASPNETCORE_URLS: http://+:80
@@ -17,7 +17,8 @@ DOTNET_VERSION: 5.0.13
 ASPNET_VERSION: 5.0.13
 ASPNETCORE_ENVIRONMENT: Development
 
-imagePullSecrets: []
+imagePullSecrets:
+  - name: "docker-hub-thanhtung"
 nameOverride: ""
 fullnameOverride: ""
 

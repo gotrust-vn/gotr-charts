@@ -18,7 +18,7 @@ ASPNET_VERSION: 5.0.13
 
 
 imagePullSecrets:
-  - name: "docker-hub-linhnh"
+  - name: "docker-hub-thanhtung"
 nameOverride: ""
 fullnameOverride: ""
 
