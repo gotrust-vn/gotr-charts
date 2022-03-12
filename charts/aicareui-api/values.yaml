@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: nhlinh/gotrust_aicare_ui
+  repository: thanhtung2604/medicalui
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  tag: "prod"
 
 PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ASPNETCORE_URLS: http://+:80

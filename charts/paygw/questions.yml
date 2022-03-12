@@ -1,6 +1,6 @@
 questions:
 - variable: container_name
-  default: message-api
+  default: paygw
   description: "Use default Container Name settings."
   label: Use default Container Name
   type: string
@@ -13,37 +13,30 @@ questions:
   type: string
   group: "Environments"
 
-- variable: ASPNETCORE_URLS
-  default: http://+:2022
+- variable: NGINX_VERSION
+  default: 1.21.3
   description: "Use default Environments settings."
-  label: ASPNETCORE_URLS
+  label: NGINX_VERSION
   type: string
   group: "Environments"
 
-- variable: DOTNET_RUNNING_IN_CONTAINER
-  default: "true"
+- variable: NJS_VERSION
+  default: 0.6.2
   description: "Use default Environments settings."
-  label: DOTNET_RUNNING_IN_CONTAINER
+  label: NJS_VERSION
   type: string
   group: "Environments"
 
-- variable: DOTNET_VERSION
-  default: 5.0.13
+- variable: PKG_RELEASE
+  default: 1-buster
   description: "Use default Environments settings."
-  label: DOTNET_VERSION
-  type: string
-  group: "Environments"
-
-- variable: ASPNET_VERSION
-  default: 5.0.13
-  description: "Use default Environments settings."
-  label: ASPNET_VERSION
+  label: PKG_RELEASE
   type: string
   group: "Environments"
 
 
 - variable: image.repository
-  default: "thanhtung2604/messageapi"
+  default: "thanhtung2604/paymenthappycare"
   description: "Use default Image Repository settings."
   label: Image Repository
   type: string
@@ -57,7 +50,7 @@ questions:
   group: "Image Repository"
 
 - variable: image.tag
-  default: "prod"
+  default: "latest"
   description: "Use default Image Repository settings."
   label: Image Repository
   type: string

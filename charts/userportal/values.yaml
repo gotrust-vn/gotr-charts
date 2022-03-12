@@ -1,28 +1,25 @@
-# Default values for identity-api.
+# Default values for crm-aicare.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: thanhtung2604/messageapi
+  repository: ngochaint1999/happycare
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "prod"
+  tag: "dev"
 
 PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-ASPNETCORE_URLS: http://+:2022
-DOTNET_RUNNING_IN_CONTAINER: "true"
-DOTNET_VERSION: 5.0.13
-ASPNET_VERSION: 5.0.13
+NGINX_VERSION: 1.21.3
+NJS_VERSION: 0.6.2
+PKG_RELEASE: 1-buster
 
 
-imagePullSecrets:
-  - name: "docker-hub-linhnh"
+
+imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
-
-container_name: message-api
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -45,10 +42,10 @@ securityContext: {}
   # readOnlyRootFilesystem: true
   # runAsNonRoot: true
   # runAsUser: 1000
-
+container_name: userportal
 service:
   type: ClusterIP
-  port: 2022
+  port: 80
 
 ingress:
   enabled: false

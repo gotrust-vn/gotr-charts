@@ -43,7 +43,7 @@ questions:
 
 
 - variable: image.repository
-  default: "nhlinh/gotrust_common_uploadfile"
+  default: "thanhtung2604/uploadfileapi"
   description: "Use default Image Repository settings."
   label: Image Repository
   type: string
@@ -57,7 +57,7 @@ questions:
   group: "Image Repository"
 
 - variable: image.tag
-  default: "latest"
+  default: "prod"
   description: "Use default Image Repository settings."
   label: Image Repository
   type: string
