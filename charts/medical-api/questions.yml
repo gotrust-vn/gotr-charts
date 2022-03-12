@@ -28,28 +28,22 @@ questions:
   group: "Environments"
 
 - variable: DOTNET_VERSION
-  default: 6.0.2
+  default: 5.0.12
   description: "Use default Environments settings."
   label: DOTNET_VERSION
   type: string
   group: "Environments"
 
 - variable: ASPNET_VERSION
-  default: 6.0.2
+  default: 5.0.12
   description: "Use default Environments settings."
   label: ASPNET_VERSION
   type: string
   group: "Environments"
 
-- variable: Logging__Console__FormatterName
-  default: Json
-  description: "Use default Environments settings."
-  label: Logging__Console__FormatterName
-  type: string
-  group: "Environments"
 
 - variable: image.repository
-  default: "301609905/aicaremedicalserviceserver"
+  default: "301609905/medicalapi"
   description: "Use default Image Repository settings."
   label: Image Repository
   type: string
@@ -65,6 +59,6 @@ questions:
 - variable: image.tag
   default: "latest"
   description: "Use default Image Repository settings."
-  label: Image Repository
+  label: Image Tag
   type: string
   group: "Image Repository"

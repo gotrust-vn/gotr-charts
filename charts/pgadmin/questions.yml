@@ -115,7 +115,7 @@ questions:
 - variable: image.tag
   default: "latest"
   description: "Use default Container PG Admin settings."
-  label: Image Repository
+  label: Image Tag
   type: string
   group: "Image Repository PG Admin"
 

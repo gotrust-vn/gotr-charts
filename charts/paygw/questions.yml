@@ -52,7 +52,7 @@ questions:
 - variable: image.tag
   default: "latest"
   description: "Use default Image Repository settings."
-  label: Image Repository
+  label: Image Tag
   type: string
   group: "Image Repository"
 

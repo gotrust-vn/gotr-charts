@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: 301609905/aicaremedicalserviceserver
+  repository: 301609905/medicalapi
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
@@ -13,9 +13,9 @@ image:
 PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ASPNETCORE_URLS: http://+:80
 DOTNET_RUNNING_IN_CONTAINER: "true"
-DOTNET_VERSION: 6.0.2
-ASPNET_VERSION: 6.0.2
-Logging__Console__FormatterName: Json
+DOTNET_VERSION: 5.0.12
+ASPNET_VERSION: 5.0.12
+
 
 imagePullSecrets: []
 nameOverride: ""

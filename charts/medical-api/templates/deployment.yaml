@@ -44,8 +44,6 @@ spec:
               value: {{ .Values.DOTNET_VERSION }}
             - name: ASPNET_VERSION
               value: {{ .Values.ASPNET_VERSION }}
-            - name: Logging__Console__FormatterName
-              value: {{ .Values.Logging__Console__FormatterName }}
           ports:
             - name: http
               containerPort: 80
