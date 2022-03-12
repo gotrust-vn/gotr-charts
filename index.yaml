@@ -335,6 +335,17 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/message-api-0.1.0/message-api-0.1.0.tgz
     version: 0.1.0
+  paygw:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-12T14:25:26.409706701Z"
+    description: Payment Gateway
+    digest: cad30638cc31bcd63412af8ed782fcfd99c3c5ed1e13cf66d3a02496a2e87c19
+    name: paygw
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/paygw-0.1.0/paygw-0.1.0.tgz
+    version: 0.1.0
   payment-api:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -392,4 +403,15 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/uploadfile-api-0.1.0/uploadfile-api-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-11T10:14:12.713818934Z"
+  userportal:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-12T14:25:27.237440063Z"
+    description: Gotrust User Portal
+    digest: 04d9850e3a31e4d751f9c3e361e2689343c40c25e8ae4a7cf4630b9ddfa51bff
+    name: userportal
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/userportal-0.1.0/userportal-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-03-12T14:25:27.237752457Z"
