@@ -1,0 +1,14 @@
+git push --delete origin uploadfile-api-0.1.0
+git push --delete origin message-api-0.1.0
+git push --delete origin medical-api-0.1.0
+git push --delete origin customer-api-0.1.0
+git push --delete origin identity-api-0.1.0
+git push --delete origin pgadmin-0.1.0
+git push --delete origin postgresql-0.1.0
+git push --delete origin gateway-api-0.1.0
+git push --delete origin crm-aicare-0.1.0
+git push --delete origin payment-api-0.1.0
+git push --delete origin aicareui-api-0.1.0
+git push --delete origin master-category-api-0.1.0
+git push --delete origin paygw-0.1.0
+git push --delete origin userportal-0.1.0
