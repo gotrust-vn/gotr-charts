@@ -8,7 +8,7 @@ image:
   repository: tinhpv98/gotrust.insurtech.mvp
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  tag: "staging"
 
 ASPNETCORE_ENVIRONMENT: Development
 

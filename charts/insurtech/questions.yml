@@ -29,7 +29,7 @@ questions:
   group: "Image Repository"
 
 - variable: image.tag
-  default: "latest"
+  default: "staging"
   description: "Use default Image Repository settings."
   label: Image Repository
   type: string
