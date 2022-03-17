@@ -261,6 +261,28 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/identity-api-0.1.0/identity-api-0.1.0.tgz
     version: 0.1.0
+  insurance:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-17T10:46:12.162383483Z"
+    description: Dev CRM Insurance
+    digest: 5b7a94635a37babf4a02d1fabd3298a34580623eadfc5c239ff616c765478896
+    name: insurance
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/insurance-0.1.0/insurance-0.1.0.tgz
+    version: 0.1.0
+  insurtech:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-17T10:46:12.333019225Z"
+    description: Dev Insur Tech
+    digest: 795ba800a538d7c569c2cb33580e851a036836e2a67a5c0b093d3238208b943e
+    name: insurtech
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/insurtech-0.1.0/insurtech-0.1.0.tgz
+    version: 0.1.0
   master-category-api:
   - annotations:
       category: Application
@@ -414,4 +436,4 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/userportal-0.1.0/userportal-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-12T14:25:27.237752457Z"
+generated: "2022-03-17T10:46:13.840971455Z"
