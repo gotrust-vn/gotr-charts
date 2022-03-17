@@ -12,3 +12,5 @@ git push --delete origin aicareui-api-0.1.0
 git push --delete origin master-category-api-0.1.0
 git push --delete origin paygw-0.1.0
 git push --delete origin userportal-0.1.0
+git push --delete origin insurtech-0.1.0
+git push --delete origin insurance-0.1.0
