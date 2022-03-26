@@ -1,0 +1,28 @@
+questions:
+- variable: container_name
+  default: dev-payment-api
+  description: "Use default Container Name settings."
+  label: Use default Container Name
+  type: string
+  group: "Container"
+
+- variable: image.repository
+  default: "301609905/api"
+  description: "Use default Image Repository settings."
+  label: Image Repository
+  type: string
+  group: "Image Repository"
+
+- variable: image.pullPolicy
+  default: Always
+  description: "Use default Image Repository settings."
+  label: Pull Policy
+  type: string
+  group: "Image Repository"
+
+- variable: image.tag
+  default: "latest"
+  description: "Use default Image Repository settings."
+  label: Image Tag
+  type: string
+  group: "Image Repository"
