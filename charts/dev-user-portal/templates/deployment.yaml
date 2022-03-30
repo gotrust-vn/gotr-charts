@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "aicareui-api"
+  name: "dev-user-portal"
   labels:
-    {{- include "aicareui-api.labels" . | nindent 4 }}
+    {{- include "dev-user-portal.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "aicareui-api.selectorLabels" . | nindent 6 }}
+      {{- include "dev-user-portal.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,17 +18,17 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "aicareui-api.selectorLabels" . | nindent 8 }}
+        {{- include "dev-user-portal.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: "aicareui-api"
+      serviceAccountName: "dev-user-portal"
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-        - name: {{ .Chart.Name }}
+        - name: "dev-user-portal"
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -36,21 +36,16 @@ spec:
           env:
             - name: PATH
               value: {{ .Values.PATH }}
-            - name: ASPNETCORE_URLS
-              value: {{ .Values.ASPNETCORE_URLS }}
-            - name: DOTNET_RUNNING_IN_CONTAINER
-              value: "{{ .Values.DOTNET_RUNNING_IN_CONTAINER }}"
-            - name: DOTNET_VERSION
-              value: {{ .Values.DOTNET_VERSION }}
-            - name: ASPNET_VERSION
-              value: {{ .Values.ASPNET_VERSION }}
-            
+            - name: NGINX_VERSION
+              value: {{ .Values.NGINX_VERSION }}
+            - name: NJS_VERSION
+              value: {{ .Values.NJS_VERSION }}
+            - name: PKG_RELEASE
+              value: {{ .Values.PKG_RELEASE }}
           ports:
             - name: http
               containerPort: 80
               protocol: TCP
-
-            
           #livenessProbe:
           #  httpGet:
           #    path: /

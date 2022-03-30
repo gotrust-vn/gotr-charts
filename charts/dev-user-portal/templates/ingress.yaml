@@ -1,5 +1,5 @@
 {{- if .Values.ingress.enabled -}}
-{{- $fullName := include "aicareui-api.fullname" . -}}
+{{- $fullName := include "dev-user-portal.fullname" . -}}
 {{- $svcPort := .Values.service.port -}}
 {{- if and .Values.ingress.className (not (semverCompare ">=1.18-0" .Capabilities.KubeVersion.GitVersion)) }}
   {{- if not (hasKey .Values.ingress.annotations "kubernetes.io/ingress.class") }}
@@ -15,9 +15,9 @@ apiVersion: extensions/v1beta1
 {{- end }}
 kind: Ingress
 metadata:
-  name: aicareui-api
+  name: "dev-user-portal"
   labels:
-    {{- include "aicareui-api.labels" . | nindent 4 }}
+    {{- include "dev-user-portal.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
@@ -49,11 +49,11 @@ spec:
             backend:
               {{- if semverCompare ">=1.19-0" $.Capabilities.KubeVersion.GitVersion }}
               service:
-                name: aicareui-api
+                name: "dev-user-portal"
                 port:
                   number: {{ $svcPort }}
               {{- else }}
-              serviceName: aicareui-api
+              serviceName: "dev-user-portal"
               servicePort: {{ $svcPort }}
               {{- end }}
           {{- end }}
