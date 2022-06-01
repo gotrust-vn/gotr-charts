@@ -1,9 +1,7 @@
-annotations:
-  category: Application
 apiVersion: v2
 name: aicareui-api
-description: AI Care UI, a product is powered by GoTrust
-
+description: Api Ui của app ai care
+#deprecated: true
 # A chart can be either an 'application' or a 'library' chart.
 #
 # Application charts are a collection of templates that can be packaged into versioned archives
@@ -23,12 +21,4 @@ version: 0.1.0
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
 # It is recommended to use it with quotes.
-appVersion: "0.0.1"
-
-keywords:
-  - gotrust
-  - application
-  - aicareui
-maintainers:
-  - email: maintainers@gotrust.vn
-    name: GoTrust
+appVersion: "1.16.0"

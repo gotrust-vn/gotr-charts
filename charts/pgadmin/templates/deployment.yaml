@@ -1,0 +1,83 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pgadmin
+  labels:
+    {{- include "pgadmin.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "pgadmin.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "pgadmin.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: "pgadmin"
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: psql
+              containerPort: 5432
+              protocol: TCP
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          env:
+            - name: PATH
+              value: {{ .Values.PATH }}
+            - name: PGADMIN_CONFIG_CONSOLE_LOG_LEVEL
+              value: "{{ .Values.PGADMIN_CONFIG_CONSOLE_LOG_LEVEL }}"
+            - name: PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION
+              value: "{{ .Values.PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION }}"
+            - name: PGADMIN_CONFIG_PROXY_X_FOR_COUNT
+              value: "{{ .Values.PGADMIN_CONFIG_PROXY_X_FOR_COUNT }}"
+            - name: PGADMIN_CONFIG_PROXY_X_HOST_COUNT
+              value: "{{ .Values.PGADMIN_CONFIG_PROXY_X_HOST_COUNT }}"
+            - name: PGADMIN_CONFIG_PROXY_X_PORT_COUNT
+              value: "{{ .Values.PGADMIN_CONFIG_PROXY_X_PORT_COUNT }}"
+            - name: PGADMIN_CONFIG_PROXY_X_PREFIX_COUNT
+              value: "{{ .Values.PGADMIN_CONFIG_PROXY_X_PREFIX_COUNT }}"
+            - name: PGADMIN_CONFIG_PROXY_X_PROTO_COUNT
+              value: "{{ .Values.PGADMIN_CONFIG_PROXY_X_PROTO_COUNT }}"
+            - name: PGADMIN_DEFAULT_EMAIL
+              value: {{ .Values.PGADMIN_DEFAULT_EMAIL }}
+            - name: PGADMIN_DEFAULT_PASSWORD
+              value: {{ .Values.PGADMIN_DEFAULT_PASSWORD }}
+            - name: PGADMIN_LISTEN_PORT
+              value: "{{ .Values.PGADMIN_LISTEN_PORT }}"
+            - name: PYTHONPATH
+              value: {{ .Values.PYTHONPATH }}
+            - name: SCRIPT_NAME
+              value: {{ .Values.SCRIPT_NAME }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
