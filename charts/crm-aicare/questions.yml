@@ -1,0 +1,57 @@
+questions:
+- variable: container_name
+  default: crm-aicare
+  description: "Use default Container Name settings."
+  label: Use default Container Name
+  type: string
+  group: "Container"
+
+- variable: PATH
+  default: usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+  description: "Use default Environments settings."
+  label: PATH
+  type: string
+  group: "Environments"
+
+- variable: NGINX_VERSION
+  default: 1.21.3
+  description: "Use default Environments settings."
+  label: NGINX_VERSION
+  type: string
+  group: "Environments"
+
+- variable: NJS_VERSION
+  default: 0.6.2
+  description: "Use default Environments settings."
+  label: NJS_VERSION
+  type: string
+  group: "Environments"
+
+- variable: PKG_RELEASE
+  default: 1-buster
+  description: "Use default Environments settings."
+  label: PKG_RELEASE
+  type: string
+  group: "Environments"
+
+
+- variable: image.repository
+  default: "thanhtung2604/aicarecrm"
+  description: "Use default Image Repository settings."
+  label: Image Repository
+  type: string
+  group: "Image Repository"
+
+- variable: image.pullPolicy
+  default: Always
+  description: "Use default Image Repository settings."
+  label: Pull Policy
+  type: string
+  group: "Image Repository"
+
+- variable: image.tag
+  default: "latest"
+  description: "Use default Image Repository settings."
+  label: Image Tag
+  type: string
+  group: "Image Repository"

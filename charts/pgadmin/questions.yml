@@ -1,0 +1,122 @@
+questions:
+# PG Admin Configuration
+- variable: container_name
+  default: pgadmin4
+  description: "Use default Container Name settings."
+  label: Use default Container Name
+  type: string
+  group: "Container PG Admin"
+
+- variable: PATH
+  default: usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+  description: "Use default Container PG Admin settings."
+  label: PATH
+  type: string
+  group: "Environments PG Admin"
+
+- variable: PGADMIN_CONFIG_CONSOLE_LOG_LEVEL
+  default: "10"
+  description: "Use default Container PG Admin settings."
+  label: PGADMIN_CONFIG_CONSOLE_LOG_LEVEL
+  type: string
+  group: "Environments PG Admin"
+
+- variable: PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION
+  default: "True"
+  description: "Use default Container PG Admin settings."
+  label: PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION
+  type: string
+  group: "Environments PG Admin"
+
+- variable: PGADMIN_CONFIG_PROXY_X_FOR_COUNT
+  default: "1"
+  description: "Use default Container PG Admin settings."
+  label: PGADMIN_CONFIG_PROXY_X_FOR_COUNT
+  type: string
+  group: "Environments PG Admin"
+
+- variable: PGADMIN_CONFIG_PROXY_X_HOST_COUNT
+  default: "1"
+  description: "Use default Container PG Admin settings."
+  label: PGADMIN_CONFIG_PROXY_X_HOST_COUNT
+  type: string
+  group: "Environments PG Admin"
+
+- variable: PGADMIN_CONFIG_PROXY_X_PORT_COUNT
+  default: "1"
+  description: "Use default Container PG Admin settings."
+  label: PGADMIN_CONFIG_PROXY_X_PORT_COUNT
+  type: string
+  group: "Environments PG Admin"
+
+- variable: PGADMIN_CONFIG_PROXY_X_PREFIX_COUNT
+  default: "1"
+  description: "Use default Container PG Admin settings."
+  label: PGADMIN_CONFIG_PROXY_X_PREFIX_COUNT
+  type: string
+  group: "Environments PG Admin"
+
+- variable: PGADMIN_CONFIG_PROXY_X_PROTO_COUNT
+  default: "1"
+  description: "Use default Container PG Admin settings."
+  label: PGADMIN_CONFIG_PROXY_X_PROTO_COUNT
+  type: string
+  group: "Environments PG Admin"
+
+- variable: PGADMIN_DEFAULT_EMAIL
+  default: admin@gotrust.com
+  description: "Use default Container PG Admin settings."
+  label: PGADMIN_DEFAULT_EMAIL
+  type: string
+  group: "Environments PG Admin"
+
+- variable: PGADMIN_DEFAULT_PASSWORD
+  default: GT@check1n
+  description: "Use default Container PG Admin settings."
+  label: PGADMIN_DEFAULT_PASSWORD
+  type: string
+  group: "Environments PG Admin"
+
+- variable: PGADMIN_LISTEN_PORT
+  default: "80"
+  description: "Use default Container PG Admin settings."
+  label: PGADMIN_LISTEN_PORT
+  type: string
+  group: "Environments PG Admin"
+
+- variable: PYTHONPATH
+  default: /pgadmin4
+  description: "Use default Container PG Admin settings."
+  label: PYTHONPATH
+  type: string
+  group: "Environments PG Admin"
+
+- variable: SCRIPT_NAME
+  default: /pgadmin4
+  description: "Use default Container PG Admin settings."
+  label: SCRIPT_NAME
+  type: string
+  group: "Environments PG Admin"
+
+- variable: image.repository
+  default: "dpage/pgadmin4"
+  description: "Use default Container PG Admin settings."
+  label: Image Repository
+  type: string
+  group: "Image Repository PG Admin"
+
+- variable: image.pullPolicy
+  default: Always
+  description: "Use default Container PG Admin settings."
+  label: Pull Policy
+  type: string
+  group: "Image Repository PG Admin"
+
+- variable: image.tag
+  default: "latest"
+  description: "Use default Container PG Admin settings."
+  label: Image Tag
+  type: string
+  group: "Image Repository PG Admin"
+
+

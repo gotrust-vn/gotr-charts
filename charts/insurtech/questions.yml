@@ -1,0 +1,37 @@
+questions:
+- variable: container_name
+  default: insurtech
+  description: "Use default Container Name settings."
+  label: Use default Container Name
+  type: string
+  group: "Container"
+
+- variable: ASPNETCORE_ENVIRONMENT
+  default: Development
+  description: "Use default Environments settings."
+  label: ASPNETCORE_ENVIRONMENT
+  type: string
+  group: "Environments"
+
+
+- variable: image.repository
+  default: "tinhpv98/gotrust.insurtech.mvp"
+  description: "Use default Image Repository settings."
+  label: Image Repository
+  type: string
+  group: "Image Repository"
+
+- variable: image.pullPolicy
+  default: Always
+  description: "Use default Image Repository settings."
+  label: Pull Policy
+  type: string
+  group: "Image Repository"
+
+- variable: image.tag
+  default: "staging"
+  description: "Use default Image Repository settings."
+  label: Image Repository
+  type: string
+  group: "Image Repository"
+
