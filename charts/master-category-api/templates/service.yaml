@@ -1,17 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "master-category-api.fullname" . }}
+  name: "master-category-api"
   labels:
     {{- include "master-category-api.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
-    {{- range .Values.service.names }}
-    - port: {{ .port }}
-      targetPort: {{ .targetPort }}
-      protocol: {{ .protocol }}
-      name: {{ .name }}
-    {{- end }}
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
   selector:
     {{- include "master-category-api.selectorLabels" . | nindent 4 }}

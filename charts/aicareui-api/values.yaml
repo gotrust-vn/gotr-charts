@@ -5,15 +5,22 @@
 replicaCount: 1
 
 image:
-  repository: nhlinh/gotrust_aicare_ui
-  pullPolicy: IfNotPresent
+  repository: thanhtung2604/medicalui
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  tag: "prod"
 
-imagePullSecrets: docker-hub-linhnh
+PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ASPNETCORE_URLS: http://+:80
+DOTNET_RUNNING_IN_CONTAINER: "true"
+DOTNET_VERSION: 5.0.14
+ASPNET_VERSION: 5.0.14
+
+imagePullSecrets:
+  - name: "docker-hub-thanhtung"
 nameOverride: ""
 fullnameOverride: ""
-
+container_name: aicareui-api
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
@@ -44,22 +51,17 @@ ingress:
   enabled: true
   className: ""
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-    nginx.ingress.kubernetes.io/server-alias: medical.aicare.x24hr.com
-    # kubernetes.io/ingress.class: nginx
+     kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: medical.aicare.x24hr.com
+    - host: aicare-ui.gotrust.vn
       paths:
         - path: /
           pathType: Prefix
-          name: aicare-ui
-          portNumber: 80
-
-  tls:
-    - secretName: tls-medical-ai-ui
+  tls: 
+    - secretName: tls-gotrust.vn
       hosts:
-        - medical.aicare.x24hr.com
+        - '*.gotrust.vn'
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -85,10 +87,3 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-ASPNETCORE_URLS: http://+:80
-DOTNET_RUNNING_IN_CONTAINER: true
-DOTNET_VERSION: 5.0.14
-ASPNET_VERSION: 5.0.14
-
