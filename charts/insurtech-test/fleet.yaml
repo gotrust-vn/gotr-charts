@@ -18,8 +18,8 @@ imageScans:
   tagName: latest
 
   # specify secret to pull image if in private registry
-  # secretRef:
-  #   name: ""
+  secretRef:
+    name: ghcr-pull-image
 
   # Specify the scan interval
   interval: 5m 
