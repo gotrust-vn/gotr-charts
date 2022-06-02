@@ -283,6 +283,17 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/insurtech-0.1.0/insurtech-0.1.0.tgz
     version: 0.1.0
+  insurtech-test:
+  - apiVersion: v2
+    appVersion: v1.0.1
+    created: "2022-06-02T09:57:31.129640663Z"
+    description: A Helm chart for Kubernetes
+    digest: 70fe7863ad927934c5fd416eda4ead3f61842847529433240765b6f788e232c6
+    name: insurtech-test
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/insurtech-test-0.1.1/insurtech-test-0.1.1.tgz
+    version: 0.1.1
   master-category-api:
   - annotations:
       category: Application
@@ -436,4 +447,4 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/userportal-0.1.0/userportal-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-17T10:46:13.840971455Z"
+generated: "2022-06-02T09:57:31.315767756Z"
