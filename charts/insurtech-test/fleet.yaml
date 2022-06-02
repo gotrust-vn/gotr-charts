@@ -12,7 +12,7 @@ imageScans:
       order: asc 
 
   # specify images to scan
-  image: "ghcr.io/gotrust-vn/gotrust.insurtech.mvp" 
+  image: ghcr.io/gotrust-vn/gotrust.insurtech.mvp
 
   # Specify the tag name, it has to be unique in the same bundle
   tagName: latest
