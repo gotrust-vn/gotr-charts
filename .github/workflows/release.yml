@@ -23,8 +23,7 @@ jobs:
         uses: helm/chart-releaser-action@v1.3.0
         with:
           charts_dir: charts
-          config: |
-            "skip-existing: true"
+          config: cr-config.hcl
           charts_repo_url: https://gotrust-vn.github.io/helm-charts/
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
