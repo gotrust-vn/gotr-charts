@@ -19,7 +19,7 @@ imageScans:
 
   # specify secret to pull image if in private registry
   secretRef:
-    name: ghcr-pull-image
+    name: gotrust-service/ghcr-pull-image
 
   # Specify the scan interval
   interval: 5m 
