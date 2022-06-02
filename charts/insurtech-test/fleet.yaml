@@ -19,7 +19,7 @@ imageScans:
 
   # specify secret to pull image if in private registry
   secretRef:
-    name: cattle-fleet-system/ghcr-pull-image
+    name: ghcr-pull-image
 
   # Specify the scan interval
   interval: 5m 
