@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: thanhtung2604/messageapi
+  repository: ghcr.io/gotrust-vn/gotrust.common.message
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "prod"
+  tag: latest
 
 PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ASPNETCORE_URLS: http://+:80
@@ -18,7 +18,7 @@ ASPNET_VERSION: 5.0.13
 
 
 imagePullSecrets:
-  - name: "docker-hub-thanhtung"
+  - name: ghcr-pull-image
 nameOverride: ""
 fullnameOverride: ""
 
