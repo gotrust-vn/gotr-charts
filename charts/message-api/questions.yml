@@ -43,7 +43,7 @@ questions:
 
 
 - variable: image.repository
-  default: "thanhtung2604/messageapi"
+  default: "ghcr.io/gotrust-vn/gotrust.common.message"
   description: "Use default Image Repository settings."
   label: Image Repository
   type: string
@@ -57,7 +57,7 @@ questions:
   group: "Image Repository"
 
 - variable: image.tag
-  default: "prod"
+  default: "latest"
   description: "Use default Image Repository settings."
   label: Image Tag
   type: string
