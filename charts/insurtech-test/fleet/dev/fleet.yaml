@@ -29,7 +29,7 @@ helm:
   # This allows one to download charts from most any location.  Also know that
   # go-getter URL supports adding a digest to validate the download. If repo
   # is set below this field is the name of the chart to lookup
-  chart: ./charts
+  # chart: ./charts
   # A https URL to a Helm repo to download the chart from. It's typically easier
   # to just use `chart` field and refer to a tgz file.  If repo is used the
   # value of `chart` will be used as the chart name to lookup in the Helm repository.
@@ -42,9 +42,9 @@ helm:
   version: 0.1.0
   # Any values that should be placed in the `values.yaml` and passed to helm during
   # install.
-  values:
-  - image:
-      tag: "latest"
+  # values:
+  # - image:
+  #     tag: "latest"
   # All labels on Rancher clusters are available using global.fleet.clusterLabels.LABELNAME
   # These can now be accessed directly as variables
     variableName: global.fleet.clusterLabels.LABELNAME
