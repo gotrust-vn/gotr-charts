@@ -1,4 +1,4 @@
-namespace: gotrust-stag
+namespace: gotrust-dev
 
 imageScans:
 # specify the policy to retrieve images, can be semver or alphabetical order 
