@@ -50,7 +50,7 @@ helm:
     # variableName: global.fleet.clusterLabels.LABELNAME
   # Path to any values files that need to be passed to helm during install
   valuesFiles:
-    - ./../../../values.yaml
+    - ../../values.yaml
   # Allow to use values files from configmaps or secrets
   # valuesFrom:
   # - configMapKeyRef:
