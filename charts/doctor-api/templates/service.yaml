@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: "message-api"
+  name: "doctor-api"
   labels:
-    {{- include "message-api.labels" . | nindent 4 }}
+    {{- include "doctor-api.labels" . | nindent 4 }}
 spec:
   spec:
   type: ClusterIP
@@ -28,4 +28,4 @@ spec:
     #  name: tcp-9899
 
   selector:
-    {{- include "message-api.selectorLabels" . | nindent 4 }}
+    {{- include "doctor-api.selectorLabels" . | nindent 4 }}
