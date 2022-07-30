@@ -238,6 +238,17 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/dev-env-0.1.0/dev-env-0.1.0.tgz
     version: 0.1.0
+  doctor-api:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-07-30T13:56:30.247763732Z"
+    description: Api send mail, send otp, push notification
+    digest: c5106947a6119fcd4e7faa41e6de91f5ae5a99e5825336dce56a2a63a1379b39
+    name: doctor-api
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/doctor-api-0.1.0/doctor-api-0.1.0.tgz
+    version: 0.1.0
   gateway-api:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -447,4 +458,4 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/userportal-0.1.0/userportal-0.1.0.tgz
     version: 0.1.0
-generated: "2022-06-02T09:57:31.315767756Z"
+generated: "2022-07-30T13:56:30.247823333Z"
