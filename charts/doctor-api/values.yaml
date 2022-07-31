@@ -13,8 +13,8 @@ image:
 PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ASPNETCORE_URLS: http://+:80
 DOTNET_RUNNING_IN_CONTAINER: "true"
-DOTNET_VERSION: 5.0.13
-ASPNET_VERSION: 5.0.13
+DOTNET_VERSION: 6.0.2
+ASPNET_VERSION: 6.0.2
 
 imagePullSecrets:
   - name: ghcr-pull-image
@@ -47,7 +47,7 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 2022
+  port: 80
 
 ingress:
   enabled: false
