@@ -28,14 +28,14 @@ questions:
   group: "Environments"
 
 - variable: DOTNET_VERSION
-  default: 5.0.13
+  default: 6.0.2
   description: "Use default Environments settings."
   label: DOTNET_VERSION
   type: string
   group: "Environments"
 
 - variable: ASPNET_VERSION
-  default: 5.0.13
+  default: 6.0.2
   description: "Use default Environments settings."
   label: ASPNET_VERSION
   type: string
