@@ -60,7 +60,7 @@ ingress:
       paths:
         - path: /aicare/doctor
           pathType: Prefix
-  tls: []
+  tls:
    - secretName: tls-gotrust.vn
      hosts:
        - api-dev.gotrust.vn
