@@ -15,6 +15,7 @@ ASPNETCORE_URLS: http://+:80
 DOTNET_RUNNING_IN_CONTAINER: "true"
 DOTNET_VERSION: 6.0.2
 ASPNET_VERSION: 6.0.2
+ASPNETCORE_ENVIRONMENT: Development
 
 imagePullSecrets:
   - name: ghcr-pull-image
@@ -53,17 +54,17 @@ ingress:
   enabled: false
   className: ""
   annotations: {}
-    # kubernetes.io/ingress.class: nginx
+    kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: doctor-api-dev.gotr.vn
+    - host: api-dev.gotr.vn
       paths:
-        - path: /
-          pathType: ImplementationSpecific
+        - path: /aicare/doctor
+          pathType: Prefix
   tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+   - secretName: tls-gotrust.vn
+     hosts:
+       - api-dev.gotrust.vn
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious

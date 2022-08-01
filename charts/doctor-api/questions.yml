@@ -41,6 +41,12 @@ questions:
   type: string
   group: "Environments"
 
+- variable: ASPNETCORE_ENVIRONMENT
+  default: Development
+  description: "Use default Environments settings."
+  label: ASPNETCORE_ENVIRONMENT
+  type: string
+  group: "Environments"
 
 - variable: image.repository
   default: "ghcr.io/gotrust-vn/aicare.v1.doctor"

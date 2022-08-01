@@ -44,31 +44,26 @@ spec:
               value: {{ .Values.DOTNET_VERSION }}
             - name: ASPNET_VERSION
               value: {{ .Values.ASPNET_VERSION }}
+            - name: ASPNETCORE_ENVIRONMENT
+              value: {{ .Values.ASPNETCORE_ENVIRONMENT }}
             
           ports:
             - name: http
               containerPort: 80
               protocol: TCP
 
-            #- name: http
-            #  containerPort: 2022
-            #  protocol: TCP
+            - name: https
+             containerPort: 443
+             protocol: TCP
 
-            #- name: tcp-7923
-            #  containerPort: 7923
-            #  protocol: TCP
-
-            #- name: tcp-9899
-            #  containerPort: 9899
-            #  protocol: TCP
-          #livenessProbe:
-          #  httpGet:
-          #    path: /
-          #    port: http
-          #readinessProbe:
-          #  httpGet:
-          #    path: /
-          #    port: http
+          livenessProbe:
+           httpGet:
+             path: /
+             port: http
+          readinessProbe:
+           httpGet:
+             path: /
+             port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

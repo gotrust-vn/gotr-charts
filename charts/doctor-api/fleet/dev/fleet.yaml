@@ -9,7 +9,7 @@ imageScans:
       range: "*" 
     # can use ascending or descending order
     alphabetical:
-      order: asc 
+      order: asc
 
   # specify images to scan
   image: ghcr.io/gotrust-vn/aicare.v1.doctor

@@ -12,20 +12,11 @@ spec:
       targetPort: http
       protocol: TCP
       name: http
-    #- port: 2022
-    #  targetPort: http
-    #  protocol: TCP
-    #  name: http
 
-    #- port: 7923
-    #  targetPort: 7923
-    #  protocol: TCP
-    #  name: tcp-7923
-
-    #- port: 9899
-    #  targetPort: 9899
-    #  protocol: TCP
-    #  name: tcp-9899
+    - port: 443
+     targetPort: https
+     protocol: TCP
+     name: https
 
   selector:
     {{- include "doctor-api.selectorLabels" . | nindent 4 }}
