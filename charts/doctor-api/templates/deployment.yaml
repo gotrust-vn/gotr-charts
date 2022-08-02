@@ -31,7 +31,7 @@ spec:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: PATH
@@ -39,7 +39,7 @@ spec:
             - name: ASPNETCORE_URLS
               value: {{ .Values.ASPNETCORE_URLS }}
             - name: DOTNET_RUNNING_IN_CONTAINER
-              value: "{{ .Values.DOTNET_RUNNING_IN_CONTAINER }}"
+              value: {{ .Values.DOTNET_RUNNING_IN_CONTAINER }}
             - name: DOTNET_VERSION
               value: {{ .Values.DOTNET_VERSION }}
             - name: ASPNET_VERSION
@@ -53,8 +53,8 @@ spec:
               protocol: TCP
 
             - name: https
-             containerPort: 443
-             protocol: TCP
+              containerPort: 443
+              protocol: TCP
 
           livenessProbe:
            httpGet:
