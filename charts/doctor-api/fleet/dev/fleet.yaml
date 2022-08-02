@@ -15,7 +15,7 @@ imageScans:
   image: ghcr.io/gotrust-vn/aicare.v1.doctor
 
   # Specify the tag name, it has to be unique in the same bundle
-  tagName: latest
+  tagName: image-scan
 
   # specify secret to pull image if in private registry
   secretRef:
