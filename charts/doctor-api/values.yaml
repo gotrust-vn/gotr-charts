@@ -61,9 +61,9 @@ ingress:
         - path: /aicare/doctor
           pathType: Prefix
   tls:
-   - secretName: tls-gotrust.vn
-     hosts:
-       - api-dev.gotrust.vn
+    - secretName: tls-gotrust.vn
+      hosts:
+        - api-dev.gotrust.vn
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
