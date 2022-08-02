@@ -58,12 +58,10 @@ spec:
 
           livenessProbe:
             httpGet:
-              path: /
-              port: http
+              path: /aicare/doctor/swagger/
           readinessProbe:
             httpGet:
-              path: /
-              port: http
+              path: /aicare/doctor/swagger/
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
