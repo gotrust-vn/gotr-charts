@@ -21,7 +21,7 @@ questions:
   group: "Environments"
 
 - variable: DOTNET_RUNNING_IN_CONTAINER
-  default: "true"
+  default: true
   description: "Use default Environments settings."
   label: DOTNET_RUNNING_IN_CONTAINER
   type: string
