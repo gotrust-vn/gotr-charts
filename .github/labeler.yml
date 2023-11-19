@@ -1,0 +1,10 @@
+area/tooling:
+- .github/*
+- .gitignore
+
+area/docs:
+- CONTRIBUTING.md
+- LICENSE
+- NOTICE
+- README.md
+- PROCESSES.md
