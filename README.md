@@ -27,7 +27,7 @@ We'd love to have you contribute! Please refer to our [contribution guidelines](
 ## License
 
 <!-- Keep full URL links to repo files because this README syncs from main to gh-pages.  -->
-<!-- [Apache 2.0 License](https://github.com/gotrust-vn/helm-charts/blob/main/LICENSE). -->
+[Apache 2.0 License](https://github.com/gotrust-vn/helm-charts/blob/main/LICENSE).
 
 ## Helm charts build status
 
