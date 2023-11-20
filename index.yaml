@@ -238,6 +238,28 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/dev-env-0.1.0/dev-env-0.1.0.tgz
     version: 0.1.0
+  dev-payment-api:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-11-20T08:55:00.44542463Z"
+    description: A Helm chart for Kubernetes
+    digest: 5adeae759172952ae3eb6ec01b6557e2d128ed495e88e071137c990a8ff67597
+    name: dev-payment-api
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/dev-payment-api-0.1.0/dev-payment-api-0.1.0.tgz
+    version: 0.1.0
+  dev-user-portal:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-11-20T08:55:00.631831347Z"
+    description: A Helm chart for Kubernetes
+    digest: cde4292996364c64cdf0f49cf3cb80c0d955173a3d2583410713046fd7a221d9
+    name: dev-user-portal
+    type: application
+    urls:
+    - https://github.com/gotrust-vn/helm-charts/releases/download/dev-user-portal-0.1.0/dev-user-portal-0.1.0.tgz
+    version: 0.1.0
   doctor-api:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -468,4 +490,4 @@ entries:
     urls:
     - https://github.com/gotrust-vn/helm-charts/releases/download/userportal-0.1.0/userportal-0.1.0.tgz
     version: 0.1.0
-generated: "2022-07-31T05:52:15.35289314Z"
+generated: "2023-11-20T08:55:02.86978013Z"
