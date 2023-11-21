@@ -1,20 +1,34 @@
+# Gotrust Kubernetes Helm Charts
+
+![Release Charts](https://github.com/gotrust-vn/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Releases downloads](https://img.shields.io/github/downloads/gotrust-vn/helm-charts/total.svg)](https://github.com/gotrust-vn/helm-charts/releases)
+
+This functionality is in beta and is subject to change. The code is provided as-is with no warranties. Beta features are not subject to the support SLA of official GA features.
+
 ## Usage
 
-[Helm](https://helm.sh) must be installed to use the charts.  Please refer to
-Helm's [documentation](https://helm.sh/docs) to get started.
+[Helm](https://helm.sh) must be installed to use the charts.
+Please refer to Helm's [documentation](https://helm.sh/docs/) to get started.
 
-Once Helm has been set up correctly, add the repo as follows:
+Once Helm is set up properly, add the repository as follows:
 
-  helm repo add <alias> https://<orgname>.github.io/helm-charts
+```console
+helm repo add gotrust-vn https://gotrust-vn.github.io/helm-charts
+```
 
-If you had already added this repo earlier, run `helm repo update` to retrieve
-the latest versions of the packages.  You can then run `helm search repo
-<alias>` to see the charts.
+You can then run `helm search repo gotrust-vn` to see the charts.
 
-To install the <chart-name> chart:
+## Contributing
 
-    helm install my-<chart-name> <alias>/<chart-name>
+The source code of all [Gotrust](https://gotrust.vn) [Helm](https://helm.sh) charts can be found on Github: <https://github.com/gotrust-vn/helm-charts/>
 
-To uninstall the chart:
+<!-- Keep full URL links to repo files because this README syncs from main to gh-pages.  -->
+We'd love to have you contribute! Please refer to our [contribution guidelines](https://github.com/gotrust-vn/helm-charts/blob/main/CONTRIBUTING.md) for details.
 
-    helm delete my-<chart-name>
+## License
+
+<!-- Keep full URL links to repo files because this README syncs from main to gh-pages.  -->
+[Apache 2.0 License](https://github.com/gotrust-vn/helm-charts/blob/main/LICENSE).
+
+## Helm charts build status
+
+![Release Charts](https://github.com/gotrust-vn/helm-charts/workflows/Release%20Charts/badge.svg)
