@@ -31,21 +31,20 @@ jobs:
           echo '#!/bin/bash' >> /tmp/gpg.sh
           echo 'gpg --batch --pinentry-mode=loopback --passphrase $GPG_KEY_PASSPHRASE $@' >> /tmp/gpg.sh
           chmod +x /tmp/gpg.sh
-          
+                    
       - name: Configure Git
         run: |
           git config commit.gpgsign true
-          git config user.signingkey $GPG_KEY_ID
           git config gpg.program /tmp/gpg.sh
-        env:
-          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
-          
-      - run: |
+          git config user.signingkey $GPG_KEY_ID
+          git config user.name "${{ secrets.GIT_COMMITTER_NAME }}"
+          git config user.email "${{ secrets.GIT_COMMITTER_EMAIL }}"
           cp -f ${{ runner.temp }}/README.md .
           git add README.md
-          git commit -m "Sync README from master"
+          git commit -S -m "Sync README from master"
           git push
         env:
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
           GPG_KEY_PASSPHRASE: ${{ secrets.GPG_KEY_PASSPHRASE }}
           GIT_COMMITTER_NAME: ${{ secrets.GIT_COMMITTER_NAME }}
           GIT_COMMITTER_EMAIL: ${{ secrets.GIT_COMMITTER_EMAIL }}
