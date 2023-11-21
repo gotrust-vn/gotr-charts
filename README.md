@@ -1,6 +1,6 @@
 # Gotrust Kubernetes Helm Charts
 
-![Release Charts](https://github.com/gotrust-vn/helm-charts/workflows/Release%20Charts/badge.svg?branch=master) [![Releases downloads](https://img.shields.io/github/downloads/gotrust-vn/helm-charts/total.svg)](https://github.com/gotrust-vn/helm-charts/releases)
+![Release Charts](https://github.com/gotrust-vn/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Releases downloads](https://img.shields.io/github/downloads/gotrust-vn/helm-charts/total.svg)](https://github.com/gotrust-vn/helm-charts/releases)
 
 This functionality is in beta and is subject to change. The code is provided as-is with no warranties. Beta features are not subject to the support SLA of official GA features.
 
@@ -31,4 +31,4 @@ We'd love to have you contribute! Please refer to our [contribution guidelines](
 
 ## Helm charts build status
 
-![Release Charts](https://github.com/gotrust-vn/helm-charts/workflows/Release%20Charts/badge.svg?branch=master)
+![Release Charts](https://github.com/gotrust-vn/helm-charts/workflows/Release%20Charts/badge.svg)
