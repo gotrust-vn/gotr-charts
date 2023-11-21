@@ -31,4 +31,4 @@ We'd love to have you contribute! Please refer to our [contribution guidelines](
 
 ## Helm charts build status
 
-![Release Charts](https://github.com/gotrust-vn/helm-charts/workflows/Release%20Charts/badge.svg?branch=main)
+![Release Charts](https://github.com/gotrust-vn/helm-charts/workflows/Release%20Charts/badge.svg?branch=master)
